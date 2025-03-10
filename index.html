@@ -254,7 +254,7 @@
           <img class="card-img" src="./assets/videos/girl/reference_images/reference_image1.png" alt="Slide 4" style="width:60px; height:auto;">
         </li>
         <li class="dot" data-slide="4">
-          <img class="card-img" src="./assets/videos/three_people/reference_images/three_people_00.jpg" alt="Slide 5" style="width:120px; height:auto;">
+          <img class="card-img" src="./assets/videos/three_people/reference_images/three_people_00.png" alt="Slide 5" style="width:120px; height:auto;">
         </li>
       </ul>
     </div>
@@ -378,30 +378,38 @@
 </section>
 
 <script>
-  // 点击缩略图切换逻辑
-  document.querySelectorAll('.slide-menu .dot').forEach(dot => {
-    dot.addEventListener('click', () => {
-      // 移除所有 dot 的激活态
-      document.querySelectorAll('.slide-menu .dot').forEach(d => d.classList.remove('is-active'));
-      dot.classList.add('is-active');
-
-      const slideIndex = dot.getAttribute('data-slide');
-      // 隐藏所有 slide
-      document.querySelectorAll('.slide-content').forEach(slide => {
-        slide.classList.remove('is-active');
-      });
-      // 只显示点击对应的那个 slide
-      const activeSlide = document.querySelector(`.slide-content[data-slide="${slideIndex}"]`);
-      activeSlide.classList.add('is-active');
-      
-      // 重新初始化当前可见幻灯片中的 twentytwenty
-      $(activeSlide).find('.twentytwenty-container').twentytwenty();
+  $(function(){
+    // 初始化所有 twentytwenty 容器
+    $('.twentytwenty-container').twentytwenty({
+      default_offset_pct: 0.5,
+      no_overlay: false
     });
-  });
+    
+    // 点击缩略图切换逻辑
+    document.querySelectorAll('.slide-menu .dot').forEach(dot => {
+      dot.addEventListener('click', () => {
+        // 移除所有 dot 的激活态
+        document.querySelectorAll('.slide-menu .dot').forEach(d => d.classList.remove('is-active'));
+        dot.classList.add('is-active');
 
-  // 页面加载完成后初始化所有 twentytwenty 容器
-  $(document).ready(function() {
-    $('.twentytwenty-container').twentytwenty();
+        const slideIndex = dot.getAttribute('data-slide');
+        // 隐藏所有 slide
+        document.querySelectorAll('.slide-content').forEach(slide => {
+          slide.classList.remove('is-active');
+        });
+        // 只显示点击对应的那个 slide
+        const activeSlide = document.querySelector(`.slide-content[data-slide="${slideIndex}"]`);
+        activeSlide.classList.add('is-active');
+        
+        // 重新初始化当前可见幻灯片中的 twentytwenty
+        setTimeout(function() {
+          $(activeSlide).find('.twentytwenty-container').twentytwenty({
+            default_offset_pct: 0.5,
+            no_overlay: false
+          });
+        }, 100);
+      });
+    });
   });
 </script>
 
