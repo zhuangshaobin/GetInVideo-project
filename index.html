@@ -6,7 +6,7 @@ new
   <meta name="description" content="Get In Video">
   <meta name="keywords" content="Get-In-Video Editing, Recognize-Track-Erase pipeline, GetInVideo, visual identity, GetInBench">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>DiffVSR</title>
+  <title>Get In Video</title>
   <!-- Latex -->
   <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
@@ -117,9 +117,6 @@ new
             <span class="author-block"><sup>&spadesuit;</sup>Work done as interns at WeChat</span>
           </div>
           
-          <div class="is-size-6 publication-authors">
-            <span class="author-block"><a href="https://zhuangshaobin.github.io/GetInVideo-project/">https://zhuangshaobin.github.io/GetInVideo-project/</a></span>
-          </div>
 
           <div class="column has-text-centered">
             <div class="publication-links">
@@ -155,9 +152,20 @@ new
                   </a>
               </span>
 
+              <!-- Video Link. -->
+              <span class="link-block">
+                <a href="https://www.youtube.com/embed/ezRM2xF3fDw" target="_blank"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span>
             </div>
 
           </div>
+
         </div>
       </div>
     </div>
@@ -260,22 +268,22 @@ new
     <div class="slide-menu" style="margin-bottom: 2rem;">
       <ul class="dots" style="display:flex; justify-content:center; gap:2rem; flex-wrap:wrap; max-width: 1200px; margin: 0 auto;">
         <li class="dot is-active" data-slide="0">
-          <img class="card-img" src="./assets/videos/bag/reference_images/reference_image1.png" alt="Slide 1" style="width:250px; height:150px; object-fit:cover;">
+          <img class="card-img" src="./assets/videos/bag/reference_images/reference_image1.png" alt="Slide 1" style="width:120px; height:auto;">
         </li>
         <li class="dot" data-slide="1">
-          <img class="card-img" src="./assets/videos/capybara/reference_images/reference_image1.png" alt="Slide 2" style="width:250px; height:150px; object-fit:cover;">
+          <img class="card-img" src="./assets/videos/capybara/reference_images/reference_image1.png" alt="Slide 2" style="width:120px; height:auto;">
         </li>
         <li class="dot" data-slide="2">
-          <img class="card-img" src="./assets/videos/dragon/reference_images/reference_image1.png" alt="Slide 3" style="width:250px; height:150px; object-fit:cover;">
+          <img class="card-img" src="./assets/videos/dragon/reference_images/reference_image1.png" alt="Slide 3" style="width:120px; height:auto;">
         </li>
         <li class="dot" data-slide="3">
-          <img class="card-img" src="./assets/videos/girl/reference_images/reference_image1.png" alt="Slide 4" style="width:250px; height:150px; object-fit:cover;">
+          <img class="card-img" src="./assets/videos/girl/reference_images/reference_image1.png" alt="Slide 4" style="width:120px; height:auto;">
         </li>
         <li class="dot" data-slide="4">
             <div class="reference-images-container">
-                <img class="card-img" src="./assets/videos/three_people/reference_images/reference_image1.png" alt="Slide 5">
-                <img class="card-img" src="./assets/videos/three_people/reference_images/reference_image2.png" alt="Slide 5">
-                <img class="card-img" src="./assets/videos/three_people/reference_images/reference_image3.png" alt="Slide 5">
+                <img class="card-img-small" src="./assets/videos/three_people/reference_images/reference_image1.png" alt="Slide 5">
+                <img class="card-img-small" src="./assets/videos/three_people/reference_images/reference_image2.png" alt="Slide 5">
+                <img class="card-img-small" src="./assets/videos/three_people/reference_images/reference_image3.png" alt="Slide 5">
             </div>
         </li>
       </ul>
@@ -550,17 +558,26 @@ new
       display: inline-block;
       transition: transform 0.3s ease-in-out;
       transform-origin: center center;
+      max-height: 100px; /* 限制最大高度 */
     }
+    
     .card-img:active {
       transform: scale(1.2);
     }
 
+    /* 五张图片的布局 */
     .columns.is-four-images {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr); /* 一行四列 */
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
       gap: 1rem;
-      margin-top: 1.5rem; /* 与上方留些间隔 */
+      margin-top: 1.5rem;
     }
+    
+    .columns.is-four-images figure {
+      flex: 0 0 18%; /* 五列，每列占18%，留出间距 */
+    }
+    
     .columns.is-four-images img {
       width: 100%;
       height: auto;
@@ -568,17 +585,19 @@ new
       border-radius: 4px;
     }
 
+    /* 多图参考容器 */
     .reference-images-container {
         display: flex;
         gap: 4px;
-        width: 250px;
-        height: 150px;
+        width: 120px;
     }
     
-    .reference-images-container .card-img {
+    .reference-images-container .card-img-small {
         width: calc(100% / 3);
-        height: 100%;
-        object-fit: cover;
+        height: auto;
+        border: 2px solid #c1bfbf;
+        border-radius: 8px;
+        padding: 1px;
     }
   </style>
 
