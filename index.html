@@ -26,6 +26,11 @@
     gtag('config', 'G-PYVRSFMDRL');
   </script> -->
   
+
+
+
+
+
   <style>
     .hr {width: 100%; height: 1px; margin: 48px 0; background-color: #d6dbdf;}
   </style>
@@ -51,9 +56,7 @@
       <div class="columns is-centered">
         <div class="column has-text-centered head">
           <h1 class="title is-2 publication-title"> 
-            <span style="color: #EA4335;">G</span><span style="color: #4285F4;">e</span><span style="color: #FBBC05;">t</span>
-            <span style="color: #34A853;">I</span><span style="color: #EA4335;">n</span>
-            <span style="color: #4285F4;">V</span><span style="color: #FBBC05;">i</span><span style="color: #34A853;">d</span><span style="color: #EA4335;">e</span><span style="color: #4285F4;">o</span>
+            <span style="color: #EA4335;">G</span><span style="color: #4285F4;">e</span><span style="color: #FBBC05;">t</span><span style="color: #34A853;">I</span><span style="color: #EA4335;">n</span><span style="color: #4285F4;">V</span><span style="color: #FBBC05;">i</span><span style="color: #34A853;">d</span><span style="color: #EA4335;">e</span><span style="color: #4285F4;">o</span>
           </h1>
           <h1 class="title is-3 publication-title"> 
             Add Anything You Want to the Video
@@ -70,7 +73,8 @@
               <a href="https://scholar.google.com/citations?user=zjrMFIIAAAAJ&hl=zh-CN">Ying Zhang</a><sup>2</sup>,&nbsp;&nbsp;</span>
             <span class="author-block">
               <a href="hhttps://scholar.google.com.hk/citations?user=PGaDirMAAAAJ&hl=zh-CN&oi=ao">Fangyikang Wang</a><sup>6&spadesuit;</sup>,&nbsp;&nbsp;</span>
-          </div>
+            <span class="author-block">
+            </div>
 
           <div class="is-size-5 publication-authors">
             <span class="author-block">
@@ -83,7 +87,8 @@
               <a href="https://scholar.google.com.hk/citations?hl=zh-CN&user=gFtI-8QAAAAJ">Chen Li</a><sup>2</sup>,&nbsp;&nbsp;</span>
             <span class="author-block">
               <a href="https://scholar.google.com.hk/citations?hl=zh-CN&user=gFtI-8QAAAAJ">Yali Wang</a><sup>4,5&dagger;</sup></span>
-          </div>
+            <span class="author-block">
+            </div>
 
           <div class="is-size-5 publication-authors">
             <span class="author-block"><sup>1</sup>Shanghai Jiao Tong University,&nbsp;&nbsp;</span>
@@ -109,7 +114,7 @@
           
           <!-- 修改：使用 Bulma Flex 类使链接居中 -->
           <div class="column has-text-centered">
-            <div class="publication-links is-flex is-justify-content-center is-align-items-center" style="gap: 10px;">
+            <div class="publication-links">
               <!-- PDF Link. -->
               <!-- <span class="link-block">
                 <a href="./xx.pdf" target="_blank"
@@ -154,7 +159,6 @@
               </span> -->
             </div>
           </div>
-
         </div>
       </div>
     </div>
@@ -240,7 +244,7 @@
     <h2 class="title is-3 has-text-centered">Generated video result</h2>
     <!-- 缩略图切换 -->
     <div class="slide-menu" style="margin-bottom: 2rem;">
-      <ul class="dots" style="display:flex; justify-content:center; gap:2rem; flex-wrap:wrap; max-width: 1200px; margin: 0 auto;">
+      <ul class="dots" style="display:flex; justify-content:center; gap:2rem; flex-wrap:wrap;">
         <li class="dot is-active" data-slide="0">
           <img class="card-img" src="./assets/videos/bag/reference_images/reference_image1.png" alt="Slide 1" style="width:120px; height:auto;">
         </li>
@@ -378,37 +382,24 @@
 </section>
 
 <script>
-  $(function(){
-    // 初始化所有 twentytwenty 容器
-    $('.twentytwenty-container').twentytwenty({
-      default_offset_pct: 0.5,
-      no_overlay: false
-    });
-    
-    // 点击缩略图切换逻辑
-    document.querySelectorAll('.slide-menu .dot').forEach(dot => {
-      dot.addEventListener('click', () => {
-        // 移除所有 dot 的激活态
-        document.querySelectorAll('.slide-menu .dot').forEach(d => d.classList.remove('is-active'));
-        dot.classList.add('is-active');
+  // 点击缩略图切换逻辑
+  document.querySelectorAll('.slide-menu .dot').forEach(dot => {
+    dot.addEventListener('click', () => {
+      // 移除所有 dot 的激活态
+      document.querySelectorAll('.slide-menu .dot').forEach(d => d.classList.remove('is-active'));
+      dot.classList.add('is-active');
 
-        const slideIndex = dot.getAttribute('data-slide');
-        // 隐藏所有 slide
-        document.querySelectorAll('.slide-content').forEach(slide => {
-          slide.classList.remove('is-active');
-        });
-        // 只显示点击对应的那个 slide
-        const activeSlide = document.querySelector(`.slide-content[data-slide="${slideIndex}"]`);
-        activeSlide.classList.add('is-active');
-        
-        // 重新初始化当前可见幻灯片中的 twentytwenty
-        setTimeout(function() {
-          $(activeSlide).find('.twentytwenty-container').twentytwenty({
-            default_offset_pct: 0.5,
-            no_overlay: false
-          });
-        }, 100);
+      const slideIndex = dot.getAttribute('data-slide');
+      // 隐藏所有 slide
+      document.querySelectorAll('.slide-content').forEach(slide => {
+        slide.classList.remove('is-active');
       });
+      // 只显示点击对应的那个 slide
+      document.querySelector(`.slide-content[data-slide="${slideIndex}"]`).classList.add('is-active');
+      // 触发一次重绘：让 TwentyTwenty 能够拿到正确的宽高重新绘制
+      $(window).trigger('resize');
+      // 或者给可见 slide 内部的 .twentytwenty-container 再初始化一次
+      $(activeSlide).find('.twentytwenty-container').twentytwenty();
     });
   });
 </script>
@@ -468,27 +459,19 @@
   <script src="./assets/js/index.js"></script>
   <script src="./assets/js/jquery.event.move.js"></script>
   <script src="./assets/js/jquery.twentytwenty.js"></script>
-  <script> 
-    $(function(){
-      // 初始化当前可见的 twentytwenty 容器
-      $('.slide-content.is-active .twentytwenty-container').twentytwenty({
-        default_offset_pct: 0.5,
-        no_overlay: false
-      });
-    });
+  <script>
+
+  // 初始化twentytwenty比较功能
+  $(function(){
+    $(".twentytwenty-container").twentytwenty();
+    // $(".twentytwenty-container", "#results-carousel").twentytwenty({default_offset_pct: 0.5, ratio: 0.5});
+  });
   </script>
 
   <!-- 引入 Bulma CSS (如有需要) -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 
   <style>
-    /* 上下两个内容布局：1列2行 */
-    .columns.is-2x1 {
-      display: grid;
-      grid-template-columns: 1fr;
-      grid-template-rows: auto;
-      gap: 1rem;
-    }
 
     /* 默认隐藏每个 slide */
     .slide-content {
@@ -507,7 +490,7 @@
       cursor: pointer;
     }
 
-    /* 缩略图样式 */
+    /* 缩略图样式 (可按需保留/修改) */
     .card-img {
       border: 2px solid #c1bfbf;
       border-radius: 8px;
@@ -516,46 +499,22 @@
       transition: transform 0.3s ease-in-out;
       transform-origin: center center;
     }
-    
     .card-img:active {
       transform: scale(1.2);
     }
 
-    /* 激活状态的缩略图 */
-    .dot.is-active .card-img {
-      border-color: #4285F4;
-      box-shadow: 0 0 8px rgba(66, 133, 244, 0.6);
+    /* 让四张图片等分排列在一行 */
+    .columns.is-four-images {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr); 
+      gap: 1rem;
+      margin-top: 1.5rem; /* 与上方留些间隔 */
     }
-
-    /* twentytwenty 相关样式 */
-    .twentytwenty-container {
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .twentytwenty-container .video {
-      position: absolute;
-      top: 0;
-      left: 0;
+    .columns.is-four-images img {
       width: 100%;
-    }
-    
-    .twentytwenty-container .video:first-child {
-      position: relative;
-      z-index: 1;
-    }
-    
-    .twentytwenty-container video {
-      width: 100%;
-      display: block;
-    }
-    
-    .twentytwenty-overlay {
-      z-index: 30;
-    }
-    
-    .twentytwenty-handle {
-      z-index: 40;
+      height: auto;
+      border: 2px solid #ccc;
+      border-radius: 4px;
     }
   </style>
 
