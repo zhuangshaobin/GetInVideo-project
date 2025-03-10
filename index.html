@@ -12,27 +12,22 @@
         tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
         TeX: { equationNumbers: { autoNumber: "AMS" } },
       });
-      </script>
+  </script>
   <script type="text/javascript" async
     src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
   </script>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
-<!--   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <!--   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-
+    function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
-
     gtag('config', 'G-PYVRSFMDRL');
-
   </script> -->
+  
   <style>
-  .hr {width: 100%; height: 1px; margin: 48px 0; background-color: #d6dbdf;}
+    .hr {width: 100%; height: 1px; margin: 48px 0; background-color: #d6dbdf;}
   </style>
 
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
@@ -55,7 +50,6 @@
     <div class="container is-max-desktop head">
       <div class="columns is-centered">
         <div class="column has-text-centered head">
-
           <h1 class="title is-2 publication-title"> 
             <span style="color: #EA4335;">G</span><span style="color: #4285F4;">e</span><span style="color: #FBBC05;">t</span>
             <span style="color: #34A853;">I</span><span style="color: #EA4335;">n</span>
@@ -64,7 +58,6 @@
           <h1 class="title is-3 publication-title"> 
             Add Anything You Want to the Video
           </h1>
-
 
           <div class="is-size-5 publication-authors">
             <span class="author-block">
@@ -116,9 +109,9 @@
             <span class="author-block"><sup>&spadesuit;</sup>Work done as interns at WeChat</span>
           </div>
           
-
+          <!-- 修改：使用 Bulma Flex 类使链接居中 -->
           <div class="column has-text-centered">
-            <div class="publication-links" style="display: flex; justify-content: center; gap: 10px;">
+            <div class="publication-links is-flex is-justify-content-center is-align-items-center" style="gap: 10px;">
               <!-- PDF Link. -->
               <!-- <span class="link-block">
                 <a href="./xx.pdf" target="_blank"
@@ -162,7 +155,6 @@
                 </a>
               </span> -->
             </div>
-
           </div>
 
         </div>
@@ -171,98 +163,83 @@
   </div>
 </section>
 
-
-
 <section class="section">
-    <div class="container is-max-desktop">
-      <!-- Abstract. -->
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-        <!-- <div class="column"> -->
-          <h2 class="title is-3">Abstract</h2>
-          <div class="content has-text-justified">
-            <p>
-              Video editing increasingly demands the ability to incorporate specific real-world instances into existing footage, yet current approaches fundamentally fail to capture the unique visual characteristics of particular subjects and ensure natural instance/scene interactions. We formalize this overlooked yet critical editing paradigm as "<b>Get-In-Video Editing</b>", where users provide reference images to precisely specify visual elements they wish to incorporate into videos.
-
-              To address this task's dual challenges of severe training data scarcity and technical challenges in maintaining spatiotemporal coherence, we introduce three key contributions:
-
-              First, we develop <b>GetIn-1M</b> dataset created through our automated <em>Recognize-Track-Erase</em> pipeline, which sequentially performs video captioning, salient instance identification, object detection, temporal tracking, and instance removal to generate high-quality video editing pairs with comprehensive annotations (reference image, tracking mask, instance prompt).
-
-              Second, we present <b>GetInVideo</b>, a novel end-to-end framework that leverages a diffusion transformer architecture with <em>3D full attention</em> to process reference images, condition videos, and masks simultaneously, maintaining temporal coherence, preserving visual identity, and ensuring natural scene interactions when integrating reference objects into videos.
-
-              Finally, we establish <b>GetInBench</b>, the first comprehensive benchmark for Get-In-Video Editing scenario, demonstrating our approach's superior performance through extensive evaluations. Our work enables accessible, high-quality incorporation of specific real-world subjects into videos, significantly advancing personalized video editing capabilities.
-            </p>
-          </div>
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Video editing increasingly demands the ability to incorporate specific real-world instances into existing footage, yet current approaches fundamentally fail to capture the unique visual characteristics of particular subjects and ensure natural instance/scene interactions. We formalize this overlooked yet critical editing paradigm as "<b>Get-In-Video Editing</b>", where users provide reference images to precisely specify visual elements they wish to incorporate into videos.
+            <br><br>
+            To address this task's dual challenges of severe training data scarcity and technical challenges in maintaining spatiotemporal coherence, we introduce three key contributions:
+            <br><br>
+            First, we develop <b>GetIn-1M</b> dataset created through our automated <em>Recognize-Track-Erase</em> pipeline, which sequentially performs video captioning, salient instance identification, object detection, temporal tracking, and instance removal to generate high-quality video editing pairs with comprehensive annotations (reference image, tracking mask, instance prompt).
+            <br><br>
+            Second, we present <b>GetInVideo</b>, a novel end-to-end framework that leverages a diffusion transformer architecture with <em>3D full attention</em> to process reference images, condition videos, and masks simultaneously, maintaining temporal coherence, preserving visual identity, and ensuring natural scene interactions when integrating reference objects into videos.
+            <br><br>
+            Finally, we establish <b>GetInBench</b>, the first comprehensive benchmark for Get-In-Video Editing scenario, demonstrating our approach's superior performance through extensive evaluations. Our work enables accessible, high-quality incorporation of specific real-world subjects into videos, significantly advancing personalized video editing capabilities.
+          </p>
         </div>
       </div>
-      <!--/ Abstract. -->
     </div>
-  </section>
+    <!--/ Abstract. -->
+  </div>
+</section>
   
-  <section class="section">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered has-text-centered">
-        <!-- <div class="column is-four-fifths"> -->
-        <div class="column">
-          <h2 class="title is-3">Method</h2>
-          <div class="content has-text-justified">
-            <p>
-                model_arch
-            </p>
-            <div class="column">
-              <img src="./assets/images/model_arch_00.png" />
-            </div>
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column">
+        <h2 class="title is-3">Method</h2>
+        <div class="content has-text-justified">
+          <p>
+            model_arch
+          </p>
+          <div class="column">
+            <img src="./assets/images/model_arch_00.png" />
           </div>
-  
-          <div class="content has-text-justified">
-            <p>
-                data_pipe
-            </p>
-            <div class="column">
-              <img src="./assets/images/data_pipe_00.png" />
-            </div>
+        </div>
+        <div class="content has-text-justified">
+          <p>
+            data_pipe
+          </p>
+          <div class="column">
+            <img src="./assets/images/data_pipe_00.png" />
           </div>
-
-            
-          <div class="content has-text-justified">
-            <p>
-                teaser
-            </p>
-            <div class="column">
-              <img src="./assets/images/teaser_00.png" />
-            </div>
+        </div>
+        <div class="content has-text-justified">
+          <p>
+            teaser
+          </p>
+          <div class="column">
+            <img src="./assets/images/teaser_00.png" />
           </div>
-  
-      
-  
-          <!-- Paper video.
-            <div id="spotlight-video">
-              <div class="container is-max-desktop">
-                  <div class="column">
-                    <h2 class="title is-3">
-                      <span class="a">DiffVSR</span>
-                      <span class="b">Demo</span>
-                    </h2>
-                    <div class="publication-video">
-                      <iframe src="https://www.youtube.com/embed/ezRM2xF3fDw?rel=0&amp;showinfo=0"
-                              frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                    </div>
-                </div>
+        </div>
+        <!-- Paper video.
+        <div id="spotlight-video">
+          <div class="container is-max-desktop">
+            <div class="column">
+              <h2 class="title is-3">
+                <span class="a">DiffVSR</span>
+                <span class="b">Demo</span>
+              </h2>
+              <div class="publication-video">
+                <iframe src="https://www.youtube.com/embed/ezRM2xF3fDw?rel=0&amp;showinfo=0"
+                        frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
               </div>
-            </div> -->
-  
-        </div>
+            </div>
+          </div>
+        </div> -->
       </div>
     </div>
-  </section>
-
-
-
+  </div>
+</section>
 
 <section class="section">
   <div class="container">
     <h2 class="title is-3 has-text-centered">Generated video result</h2>
-
     <!-- 缩略图切换 -->
     <div class="slide-menu" style="margin-bottom: 2rem;">
       <ul class="dots" style="display:flex; justify-content:center; gap:2rem; flex-wrap:wrap; max-width: 1200px; margin: 0 auto;">
@@ -276,23 +253,21 @@
           <img class="card-img" src="./assets/videos/dragon/reference_images/reference_image1.png" alt="Slide 3" style="width:120px; height:auto;">
         </li>
         <li class="dot" data-slide="3">
-          <img class="card-img" src="./assets/videos/girl/reference_images/reference_image1.png" alt="Slide 4" style="width:120px; height:auto;">
+          <img class="card-img" src="./assets/videos/girl/reference_images/reference_image1.png" alt="Slide 4" style="width:60px; height:auto;">
         </li>
         <li class="dot" data-slide="4">
-            <img class="card-img" src="./assets/videos/three_people/reference_images/reference_image1.png" alt="Slide 5" style="width:120px; height:auto;">
-          </li>
+          <img class="card-img" src="./assets/videos/three_people/reference_images/reference_image1.jpg" alt="Slide 5" style="width:120px; height:auto;">
+        </li>
       </ul>
     </div>
 
     <!-- Slide 1 -->
     <div class="slide-content is-active" data-slide="0">
       <div class="columns is-2x1">
-        <!-- 上部分（放在第1行） -->
+        <!-- 上部分 -->
         <div>
           <figure style="text-align:center;">
             <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5556">
-              <!-- 这里也可以保留 desc，如有需要 -->
-              <!-- <div class="desc">Demo #1 (Top Part)</div> -->
               <div class="video">
                 <video muted autoplay loop width="100%">
                   <source src="./assets/videos/bag/condition_video/condition_video.mp4" type="video/mp4">
@@ -378,28 +353,29 @@
         </div>
       </div>
     </div>
-        <!-- Slide 5 -->
-        <div class="slide-content" data-slide="4">
-            <div class="columns is-2x1">
-              <div>
-                <figure style="text-align:center;">
-                  <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5556">
-                    <div class="video">
-                      <video muted autoplay loop width="100%">
-                        <source src="./assets/videos/three_people/condition_video/condition_video.mp4" type="video/mp4">
-                      </video>
-                    </div>
-                    <div class="video">
-                      <video muted autoplay loop width="100%">
-                        <source src="./assets/videos/three_people/generated_video/output.mp4" type="video/mp4">
-                      </video>
-                    </div>
-                  </div>
-                  <figcaption style="margin-top:8px;"><b>Condition video vs. Generated video</b></figcaption>
-                </figure>
+
+    <!-- Slide 5 -->
+    <div class="slide-content" data-slide="4">
+      <div class="columns is-2x1">
+        <div>
+          <figure style="text-align:center;">
+            <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5556">
+              <div class="video">
+                <video muted autoplay loop width="100%">
+                  <source src="./assets/videos/three_people/condition_video/condition_video.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="video">
+                <video muted autoplay loop width="100%">
+                  <source src="./assets/videos/three_people/generated_video/output.mp4" type="video/mp4">
+                </video>
               </div>
             </div>
-          </div>
+            <figcaption style="margin-top:8px;"><b>Condition video vs. Generated video</b></figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
 
   </div>
 </section>
@@ -417,23 +393,26 @@
       document.querySelectorAll('.slide-content').forEach(slide => {
         slide.classList.remove('is-active');
       });
-      // 只显示点击对应的那个 slide
+      // 显示对应的 slide
       const activeSlide = document.querySelector(`.slide-content[data-slide="${slideIndex}"]`);
       activeSlide.classList.add('is-active');
       
-      // 重要：等待DOM更新后再初始化twentytwenty
+      // 延时 300ms 后初始化 twentytwenty（确保新 slide 完全显示）
       setTimeout(() => {
-        $(activeSlide).find('.twentytwenty-container').twentytwenty();
-      }, 50);
+        $(activeSlide).find('.twentytwenty-container').each(function() {
+          $(this).twentytwenty();
+        });
+        // 如有必要，触发一次窗口 resize
+        $(window).trigger('resize');
+      }, 300);
     });
   });
 
-  // 页面加载时初始化第一个slide的twentytwenty
+  // 页面加载时初始化第一个 slide 的 twentytwenty
   $(document).ready(function() {
     $('.slide-content.is-active .twentytwenty-container').twentytwenty();
   });
 </script>
-
 
 <section class="teaser">
   <div class="container">
@@ -448,24 +427,6 @@
 </section>
 
 <div style="margin-bottom: 3rem;"></div>
-
-
-
-
-
-<!-- <section class="section" id="BibTeX">
-  <div class="container is-max-desktop content">
-    <h2 class="title">BibTeX</h2>
-    <pre><code>@article{he2024venhancer,
-      title={VEnhancer: Generative Space-Time Enhancement for Video Generation},
-      author={He, Jingwen and Xue, Tianfan and Liu, Dongyang and Lin, Xinqi and Gao, Peng and Lin, Dahua and Qiao, Yu and Ouyang, Wanli and Liu, Ziwei},
-      journal={arXiv preprint arXiv:2407.07667},
-      year={2024}
-    }
-}</code></pre>
-  </div>
-</section> -->
-
 
 <footer class="footer">
   <div class="container">
@@ -484,14 +445,16 @@
     <div class="columns is-centered">
       <div class="column is-8">
         <div class="content">
-          <div class="columns is-centered"><p>
-            This website template is borrowed from <a href="https://github.com/nerfies/nerfies.github.io" target="_blank">Here</a>. 
-          </p></div>
+          <div class="columns is-centered">
+            <p>
+              This website template is borrowed from <a href="https://github.com/nerfies/nerfies.github.io" target="_blank">Here</a>. 
+            </p>
+          </div>
         </div>
       </div>
     </div>
 
-    <!--=================Visitor==========================-->
+    <!-- Visitor Plugin (可选) -->
     <!-- <div class="content has-text-centered" style="padding:0 0 0 0">
       <img src='https://visitor-badge.laobi.icu/badge?page_id=Vchitect/VEnhancer' alt='visitors'>
     </div> -->
@@ -499,94 +462,90 @@
   </div>
 </footer>
 
-  <!-- custom js file  -->
-  <!-- <script defer src="./assets/js/fontawesome.all.min.js"></script> -->
-  <script src="./assets/js/bulma-carousel.min.js"></script>
-  <script src="./assets/js/bulma-slider.min.js"></script>
-  <script src="./assets/js/index.js"></script>
-  <script src="./assets/js/jquery.event.move.js"></script>
-  <script src="./assets/js/jquery.twentytwenty.js"></script>
-  <script>
-    bulmaCarousel.attach('#results-carousel', {
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      infinite: true,
-      autoplay: true,
-      navigation: true
-    });
+<!-- custom js file  -->
+<!-- <script defer src="./assets/js/fontawesome.all.min.js"></script> -->
+<script src="./assets/js/bulma-carousel.min.js"></script>
+<script src="./assets/js/bulma-slider.min.js"></script>
+<script src="./assets/js/index.js"></script>
+<script src="./assets/js/jquery.event.move.js"></script>
+<script src="./assets/js/jquery.twentytwenty.js"></script>
+<script>
+  bulmaCarousel.attach('#results-carousel', {
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    infinite: true,
+    autoplay: true,
+    navigation: true
+  });
 
-  // 初始化twentytwenty比较功能
   $(function(){
     $(".twentytwenty-container").twentytwenty();
-    // $(".twentytwenty-container", "#results-carousel").twentytwenty({default_offset_pct: 0.5, ratio: 0.5});
   });
-  </script>
+</script>
 
+<!-- 引入 Bulma CSS (如有需要) -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 
-  <!-- 引入 Bulma CSS （需要时再加，如果已有可忽略） -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<style>
+  /* 上下两个内容布局：1列2行 */
+  .columns.is-2x1 {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 1rem;
+  }
 
-  <style>
-    /* 上下两个内容布局：1列2行 */
-    .columns.is-2x1 {
-      display: grid;
-      grid-template-columns: 1fr;     /* 1 列 */
-      grid-template-rows: auto; /* 2 行 */
-      gap: 1rem;
-    }
+  /* 默认隐藏每个 slide */
+  .slide-content {
+    display: none;
+  }
 
-    /* 默认隐藏每个 slide */
-    .slide-content {
-      display: none;
-    }
+  /* 只显示被点选的 slide */
+  .slide-content.is-active {
+    display: block;
+  }
 
-    /* 只显示被点选的 slide */
-    .slide-content.is-active {
-      display: block;
-    }
+  /* 去掉小圆点默认背景 */
+  .dots .dot {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
 
-    /* 去掉小圆点默认背景 */
-    .dots .dot {
-      background: none;
-      border: none;
-      cursor: pointer;
-    }
+  /* 缩略图样式 */
+  .card-img {
+    border: 2px solid #c1bfbf;
+    border-radius: 8px;
+    padding: 2px;
+    display: inline-block;
+    transition: transform 0.3s ease-in-out;
+    transform-origin: center center;
+  }
+  
+  .card-img:active {
+    transform: scale(1.2);
+  }
 
-    /* 缩略图样式 (可按需保留/修改) */
-    .card-img {
-      border: 2px solid #c1bfbf;
-      border-radius: 8px;
-      padding: 2px;
-      display: inline-block;
-      transition: transform 0.3s ease-in-out;
-      transform-origin: center center;
-    }
-    
-    .card-img:active {
-      transform: scale(1.2);
-    }
-
-    /* 五张图片的布局 */
-    .columns.is-four-images {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 1rem;
-      margin-top: 1.5rem;
-    }
-    
-    .columns.is-four-images figure {
-      flex: 0 0 18%; /* 五列，每列占18%，留出间距 */
-    }
-    
-    .columns.is-four-images img {
-      width: 100%;
-      height: auto;
-      border: 2px solid #ccc;
-      border-radius: 4px;
-    }
-
-  </style>
+  /* 五张图片的布局 */
+  .columns.is-four-images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+  
+  .columns.is-four-images figure {
+    flex: 0 0 18%;
+  }
+  
+  .columns.is-four-images img {
+    width: 100%;
+    height: auto;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+  }
+</style>
 
 </body>
 </html>
