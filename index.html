@@ -52,83 +52,11 @@
 <script src="./assets/js/index.js"></script>
 <script src="./assets/js/jquery.event.move.js"></script>
 <script src="./assets/js/jquery.twentytwenty.js"></script>
-<script>
-  bulmaCarousel.attach('#results-carousel', {
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    infinite: true,
-    autoplay: true,
-    navigation: true
-  });
 
-  $(function(){
-    $(".twentytwenty-container").twentytwenty();
-  });
-</script>
 
 <!-- 引入 Bulma CSS (如有需要) -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 
-<style>
-  /* 上下两个内容布局：1列2行 */
-  .columns.is-2x1 {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-    gap: 1rem;
-  }
-
-  /* 默认隐藏每个 slide */
-  .slide-content {
-    display: none;
-  }
-
-  /* 只显示被点选的 slide */
-  .slide-content.is-active {
-    display: block;
-  }
-
-  /* 去掉小圆点默认背景 */
-  .dots .dot {
-    background: none;
-    border: none;
-    cursor: pointer;
-  }
-
-  /* 缩略图样式 */
-  .card-img {
-    border: 2px solid #c1bfbf;
-    border-radius: 8px;
-    padding: 2px;
-    display: inline-block;
-    transition: transform 0.3s ease-in-out;
-    transform-origin: center center;
-  }
-  
-  .card-img:active {
-    transform: scale(1.2);
-  }
-
-  /* 五张图片的布局 */
-  .columns.is-four-images {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 1rem;
-    margin-top: 1.5rem;
-  }
-  
-  .columns.is-four-images figure {
-    flex: 0 0 18%;
-  }
-  
-  .columns.is-four-images img {
-    width: 100%;
-    height: auto;
-    border: 2px solid #ccc;
-    border-radius: 4px;
-  }
-</style>
 
 <section class="hero">
   <div class="hero-body">
@@ -323,177 +251,153 @@
 <section class="section">
   <div class="container">
     <h2 class="title is-3 has-text-centered">Generated video result</h2>
-    <!-- 缩略图切换 -->
-    <div class="slide-menu" style="margin-bottom: 2rem;">
-      <ul class="dots" style="display:flex; justify-content:center; gap:2rem; flex-wrap:wrap; max-width: 1200px; margin: 0 auto;">
-        <li class="dot is-active" data-slide="0">
-          <img class="card-img" src="./assets/videos/bag/reference_images/reference_image1.png" alt="Slide 1" style="width:120px; height:auto;">
-        </li>
-        <li class="dot" data-slide="1">
-          <img class="card-img" src="./assets/videos/capybara/reference_images/reference_image1.png" alt="Slide 2" style="width:120px; height:auto;">
-        </li>
-        <li class="dot" data-slide="2">
-          <img class="card-img" src="./assets/videos/dragon/reference_images/reference_image1.png" alt="Slide 3" style="width:120px; height:auto;">
-        </li>
-        <li class="dot" data-slide="3">
-          <img class="card-img" src="./assets/videos/girl/reference_images/reference_image1.png" alt="Slide 4" style="width:60px; height:auto;">
-        </li>
-        <li class="dot" data-slide="4">
-          <img class="card-img" src="./assets/videos/three_people/reference_images/reference_image1.jpg" alt="Slide 5" style="width:120px; height:auto;">
-        </li>
-      </ul>
-    </div>
-
-    <!-- Slide 1 -->
-    <div class="slide-content is-active" data-slide="0">
-      <div class="columns is-2x1">
-        <!-- 上部分 -->
-        <div>
-          <figure style="text-align:center;">
-            <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5556">
-              <div class="video">
-                <video muted autoplay loop width="100%">
-                  <source src="./assets/videos/bag/condition_video/condition_video.mp4" type="video/mp4">
-                </video>
-              </div>
-              <div class="video">
-                <video muted autoplay loop width="100%">
-                  <source src="./assets/videos/bag/generated_video/output.mp4" type="video/mp4">
-                </video>
-              </div>
+    
+    <!-- 修改为参考图像+视频对比的布局 -->
+    <div class="columns is-centered">
+      <!-- 左侧参考图像 -->
+      <div class="column is-one-third">
+        <figure style="text-align:center;">
+          <img src="./assets/videos/bag/reference_images/reference_image1.png" alt="Reference Image" style="max-width:100%; border:2px solid #ccc; border-radius:8px;">
+          <figcaption style="margin-top:8px;"><b>参考图像</b></figcaption>
+        </figure>
+      </div>
+      
+      <!-- 右侧视频对比 -->
+      <div class="column is-two-thirds">
+        <figure style="text-align:center;">
+          <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5556">
+            <div class="video">
+              <video muted autoplay loop width="100%">
+                <source src="./assets/videos/bag/condition_video/condition_video.mp4" type="video/mp4">
+              </video>
             </div>
-            <figcaption style="margin-top:8px;"><b>Condition video vs. Generated video</b></figcaption>
-          </figure>
-        </div>
+            <div class="video">
+              <video muted autoplay loop width="100%">
+                <source src="./assets/videos/bag/generated_video/output.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+          <figcaption style="margin-top:8px;"><b>原始视频 vs. 生成视频</b></figcaption>
+        </figure>
       </div>
     </div>
 
-    <!-- Slide 2 -->
-    <div class="slide-content" data-slide="1">
-      <div class="columns is-2x1">
-        <div>
-          <figure style="text-align:center;">
-            <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5556">
-              <div class="video">
-                <video muted autoplay loop width="100%">
-                  <source src="./assets/videos/capybara/condition_video/condition_video.mp4" type="video/mp4">
-                </video>
-              </div>
-              <div class="video">
-                <video muted autoplay loop width="100%">
-                  <source src="./assets/videos/capybara/generated_video/output.mp4" type="video/mp4">
-                </video>
-              </div>
+    <!-- 添加更多示例，每个都是独立的行 -->
+    <div class="columns is-centered" style="margin-top: 3rem;">
+      <div class="column is-one-third">
+        <figure style="text-align:center;">
+          <img src="./assets/videos/capybara/reference_images/reference_image1.png" alt="Reference Image" style="max-width:100%; border:2px solid #ccc; border-radius:8px;">
+          <figcaption style="margin-top:8px;"><b>参考图像</b></figcaption>
+        </figure>
+      </div>
+      <div class="column is-two-thirds">
+        <figure style="text-align:center;">
+          <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5556">
+            <div class="video">
+              <video muted autoplay loop width="100%">
+                <source src="./assets/videos/capybara/condition_video/condition_video.mp4" type="video/mp4">
+              </video>
             </div>
-            <figcaption style="margin-top:8px;"><b>Condition video vs. Generated video</b></figcaption>
-          </figure>
-        </div>
+            <div class="video">
+              <video muted autoplay loop width="100%">
+                <source src="./assets/videos/capybara/generated_video/output.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+          <figcaption style="margin-top:8px;"><b>原始视频 vs. 生成视频</b></figcaption>
+        </figure>
       </div>
     </div>
 
-    <!-- Slide 3 -->
-    <div class="slide-content" data-slide="2">
-      <div class="columns is-2x1">
-        <div>
-          <figure style="text-align:center;">
-            <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5556">
-              <div class="video">
-                <video muted autoplay loop width="100%">
-                  <source src="./assets/videos/dragon/condition_video/condition_video.mp4" type="video/mp4">
-                </video>
-              </div>
-              <div class="video">
-                <video muted autoplay loop width="100%">
-                  <source src="./assets/videos/dragon/generated_video/output.mp4" type="video/mp4">
-                </video>
-              </div>
+    <div class="columns is-centered" style="margin-top: 3rem;">
+      <div class="column is-one-third">
+        <figure style="text-align:center;">
+          <img src="./assets/videos/dragon/reference_images/reference_image1.png" alt="Reference Image" style="max-width:100%; border:2px solid #ccc; border-radius:8px;">
+          <figcaption style="margin-top:8px;"><b>参考图像</b></figcaption>
+        </figure>
+      </div>
+      <div class="column is-two-thirds">
+        <figure style="text-align:center;">
+          <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5556">
+            <div class="video">
+              <video muted autoplay loop width="100%">
+                <source src="./assets/videos/dragon/condition_video/condition_video.mp4" type="video/mp4">
+              </video>
             </div>
-            <figcaption style="margin-top:8px;"><b>Condition video vs. Generated video</b></figcaption>
-          </figure>
-        </div>
+            <div class="video">
+              <video muted autoplay loop width="100%">
+                <source src="./assets/videos/dragon/generated_video/output.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+          <figcaption style="margin-top:8px;"><b>原始视频 vs. 生成视频</b></figcaption>
+        </figure>
       </div>
     </div>
 
-    <!-- Slide 4 -->
-    <div class="slide-content" data-slide="3">
-      <div class="columns is-2x1">
-        <div>
-          <figure style="text-align:center;">
-            <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5556">
-              <div class="video">
-                <video muted autoplay loop width="100%">
-                  <source src="./assets/videos/girl/condition_video/condition_video.mp4" type="video/mp4">
-                </video>
-              </div>
-              <div class="video">
-                <video muted autoplay loop width="100%">
-                  <source src="./assets/videos/girl/generated_video/output.mp4" type="video/mp4">
-                </video>
-              </div>
+    <div class="columns is-centered" style="margin-top: 3rem;">
+      <div class="column is-one-third">
+        <figure style="text-align:center;">
+          <img src="./assets/videos/girl/reference_images/reference_image1.png" alt="Reference Image" style="max-width:100%; border:2px solid #ccc; border-radius:8px;">
+          <figcaption style="margin-top:8px;"><b>参考图像</b></figcaption>
+        </figure>
+      </div>
+      <div class="column is-two-thirds">
+        <figure style="text-align:center;">
+          <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5556">
+            <div class="video">
+              <video muted autoplay loop width="100%">
+                <source src="./assets/videos/girl/condition_video/condition_video.mp4" type="video/mp4">
+              </video>
             </div>
-            <figcaption style="margin-top:8px;"><b>Condition video vs. Generated video</b></figcaption>
-          </figure>
-        </div>
+            <div class="video">
+              <video muted autoplay loop width="100%">
+                <source src="./assets/videos/girl/generated_video/output.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+          <figcaption style="margin-top:8px;"><b>原始视频 vs. 生成视频</b></figcaption>
+        </figure>
       </div>
     </div>
 
-    <!-- Slide 5 -->
-    <div class="slide-content" data-slide="4">
-      <div class="columns is-2x1">
-        <div>
-          <figure style="text-align:center;">
-            <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5556">
-              <div class="video">
-                <video muted autoplay loop width="100%">
-                  <source src="./assets/videos/three_people/condition_video/condition_video.mp4" type="video/mp4">
-                </video>
-              </div>
-              <div class="video">
-                <video muted autoplay loop width="100%">
-                  <source src="./assets/videos/three_people/generated_video/output.mp4" type="video/mp4">
-                </video>
-              </div>
+    <div class="columns is-centered" style="margin-top: 3rem;">
+      <div class="column is-one-third">
+        <figure style="text-align:center;">
+          <img src="./assets/videos/three_people/reference_images/reference_image1.jpg" alt="Reference Image" style="max-width:100%; border:2px solid #ccc; border-radius:8px;">
+          <figcaption style="margin-top:8px;"><b>参考图像</b></figcaption>
+        </figure>
+      </div>
+      <div class="column is-two-thirds">
+        <figure style="text-align:center;">
+          <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5556">
+            <div class="video">
+              <video muted autoplay loop width="100%">
+                <source src="./assets/videos/three_people/condition_video/condition_video.mp4" type="video/mp4">
+              </video>
             </div>
-            <figcaption style="margin-top:8px;"><b>Condition video vs. Generated video</b></figcaption>
-          </figure>
-        </div>
+            <div class="video">
+              <video muted autoplay loop width="100%">
+                <source src="./assets/videos/three_people/generated_video/output.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+          <figcaption style="margin-top:8px;"><b>原始视频 vs. 生成视频</b></figcaption>
+        </figure>
       </div>
     </div>
-
   </div>
 </section>
 
 <script>
-  // 点击缩略图切换逻辑
-  document.querySelectorAll('.slide-menu .dot').forEach(dot => {
-    dot.addEventListener('click', () => {
-      // 移除所有 dot 的激活态
-      document.querySelectorAll('.slide-menu .dot').forEach(d => d.classList.remove('is-active'));
-      dot.classList.add('is-active');
-
-      const slideIndex = dot.getAttribute('data-slide');
-      // 隐藏所有 slide
-      document.querySelectorAll('.slide-content').forEach(slide => {
-        slide.classList.remove('is-active');
-      });
-      // 显示对应的 slide
-      const activeSlide = document.querySelector(`.slide-content[data-slide="${slideIndex}"]`);
-      activeSlide.classList.add('is-active');
-      
-      // 延时 300ms 后初始化 twentytwenty（确保新 slide 完全显示）
-      setTimeout(() => {
-        $(activeSlide).find('.twentytwenty-container').each(function() {
-          $(this).twentytwenty();
-        });
-        // 如有必要，触发一次窗口 resize
-        $(window).trigger('resize');
-      }, 300);
-    });
-  });
-
-  // 页面加载时初始化第一个 slide 的 twentytwenty
+  // 初始化所有twentytwenty容器
   $(document).ready(function() {
-    $('.slide-content.is-active .twentytwenty-container').twentytwenty();
+    $('.twentytwenty-container').twentytwenty();
+    
+    // 确保视频加载后重新初始化twentytwenty
+    $('video').on('loadeddata', function() {
+      $(this).closest('.twentytwenty-container').twentytwenty();
+    });
   });
 </script>
 
