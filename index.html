@@ -2,32 +2,37 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <meta name="description" content="Get In Video">
-  <meta name="keywords" content="Get-In-Video Editing, Recognize-Track-Erase pipeline, GetInVideo, visual identity, GetInBench">
+  <meta name="description" content="DiffVSR">
+  <meta name="keywords" content="Video Super-Resolution, Real-World Restoration, Temporal Consistency, Multi-Scale Attention, Progressive Learning">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Get In Video</title>
+  <title>DiffVSR</title>
   <!-- Latex -->
   <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
         tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
         TeX: { equationNumbers: { autoNumber: "AMS" } },
       });
-  </script>
+      </script>
   <script type="text/javascript" async
     src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
   </script>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
-  <!--   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+<!--   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
     gtag('js', new Date());
+
     gtag('config', 'G-PYVRSFMDRL');
+
   </script> -->
-  
   <style>
-    .hr {width: 100%; height: 1px; margin: 48px 0; background-color: #d6dbdf;}
+  .hr {width: 100%; height: 1px; margin: 48px 0; background-color: #d6dbdf;}
   </style>
 
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
@@ -45,84 +50,69 @@
 </head>
 <body>
 
-<!-- custom js file  -->
-<!-- <script defer src="./assets/js/fontawesome.all.min.js"></script> -->
-<script src="./assets/js/bulma-carousel.min.js"></script>
-<script src="./assets/js/bulma-slider.min.js"></script>
-<script src="./assets/js/index.js"></script>
-<script src="./assets/js/jquery.event.move.js"></script>
-<script src="./assets/js/jquery.twentytwenty.js"></script>
-
-
-<!-- 引入 Bulma CSS (如有需要) -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-
-
 <section class="hero">
   <div class="hero-body">
     <div class="container is-max-desktop head">
       <div class="columns is-centered">
         <div class="column has-text-centered head">
+
           <h1 class="title is-2 publication-title"> 
-            <span style="color: #EA4335;">G</span><span style="color: #4285F4;">e</span><span style="color: #FBBC05;">t</span>
-            <span style="color: #34A853;">I</span><span style="color: #EA4335;">n</span>
-            <span style="color: #4285F4;">V</span><span style="color: #FBBC05;">i</span><span style="color: #34A853;">d</span><span style="color: #EA4335;">e</span><span style="color: #4285F4;">o</span>
+            <span style="color: #EA4335;">D</span><span style="color: #4285F4;">iff</span><span style="color: #FBBC05;">V</span><span style="color: #34A853;">SR</span>
           </h1>
           <h1 class="title is-3 publication-title"> 
-            Add Anything You Want to the Video
+            Revealing an Effective Recipe for Taming
           </h1>
+          <h1 class="title is-3 publication-title"> 
+            Robust Video Super-Resolution Against Complex Degradations
+          </h1>
+
 
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <a href="https://github.com/xh9998">Shaobin Zhuang</a><sup>1&spadesuit;*</sup>,&nbsp;&nbsp;</span>
+              <a href="https://github.com/xh9998">Xiaohui Li</a><sup>1,2*</sup>,&nbsp;&nbsp;</span>
             <span class="author-block">
-              <a href="https://scholar.google.com.hk/citations?user=WRIYcNwAAAAJ&hl=zh-CN&oi=ao">Zhipeng Huang</a><sup>3&spadesuit;*</sup>,&nbsp;&nbsp;</span>
+              <a href="https://scholar.google.com.hk/citations?user=WRIYcNwAAAAJ&hl=zh-CN&oi=ao">Yihao Liu</a><sup>2*&dagger;</sup>,&nbsp;&nbsp;</span>
             <span class="author-block">
-              <a href="https://github.com/thunderbolt215">Binxin Yang</a><sup>2</sup>,&nbsp;&nbsp;</span> 
+              <a href="https://github.com/thunderbolt215">Shuo Cao</a><sup>4,2</sup>,&nbsp;&nbsp;</span> 
             <span class="author-block">
-              <a href="https://scholar.google.com/citations?user=zjrMFIIAAAAJ&hl=zh-CN">Ying Zhang</a><sup>2</sup>,&nbsp;&nbsp;</span>
+              <a href="https://scholar.google.com/citations?user=zjrMFIIAAAAJ&hl=zh-CN">Ziyan Chen</a><sup>3</sup>,&nbsp;&nbsp;</span>
             <span class="author-block">
-              <a href="hhttps://scholar.google.com.hk/citations?user=PGaDirMAAAAJ&hl=zh-CN&oi=ao">Fangyikang Wang</a><sup>6&spadesuit;</sup>,&nbsp;&nbsp;</span>
+              <a href="hhttps://scholar.google.com.hk/citations?user=PGaDirMAAAAJ&hl=zh-CN&oi=ao">Shaobin Zhuang</a><sup>1</sup>,&nbsp;&nbsp;</span>
+            <span class="author-block">
           </div>
 
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <a href="https://scholar.google.com.hk/citations?user=_gkTxJUAAAAJ&hl=zh-CN&oi=ao">Canmiao Fu</a><sup>2</sup>,&nbsp;&nbsp;</span>
+              <a href="https://scholar.google.com.hk/citations?user=_gkTxJUAAAAJ&hl=zh-CN&oi=ao">Xiangyu Chen</a><sup>1</sup>,&nbsp;&nbsp;</span>
             <span class="author-block">
-              <a href="https://scholar.google.com.hk/citations?user=EgfF_CEAAAAJ&hl=zh-CN&oi=ao">Chong Sun</a><sup>2</sup>,&nbsp;&nbsp;</span>
+              <a href="https://scholar.google.com.hk/citations?user=EgfF_CEAAAAJ&hl=zh-CN&oi=ao">Yinan He</a><sup>2</sup>,&nbsp;&nbsp;</span>
             <span class="author-block">
-              <a href="https://scholar.google.com.hk/citations?hl=zh-CN&user=Xm2M8UwAAAAJ">Zheng-Jun Zha</a><sup>3</sup>,&nbsp;&nbsp;</span>
+              <a href="https://scholar.google.com.hk/citations?hl=zh-CN&user=Xm2M8UwAAAAJ">Yi Wang</a><sup>2</sup>,&nbsp;&nbsp;</span>
             <span class="author-block">
-              <a href="https://scholar.google.com.hk/citations?hl=zh-CN&user=gFtI-8QAAAAJ">Chen Li</a><sup>2</sup>,&nbsp;&nbsp;</span>
+              <a href="https://scholar.google.com.hk/citations?hl=zh-CN&user=gFtI-8QAAAAJ">Yu Qiao</a><sup>2,3</sup></span>
             <span class="author-block">
-              <a href="https://scholar.google.com.hk/citations?hl=zh-CN&user=gFtI-8QAAAAJ">Yali Wang</a><sup>4,5&dagger;</sup></span>
           </div>
 
           <div class="is-size-5 publication-authors">
             <span class="author-block"><sup>1</sup>Shanghai Jiao Tong University,&nbsp;&nbsp;</span>
-            <span class="author-block"><sup>2</sup>WeChat, Tencent Inc,&nbsp;&nbsp;</span>
+            <span class="author-block"><sup>2</sup>Shanghai Artificial Intelligence Laboratory,&nbsp;&nbsp;</span>
           </div>
 
           <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>3</sup>University of Science and Technology of China,&nbsp;&nbsp;</span>
+            <span class="author-block"><sup>3</sup>Shenzhen Institute of Advanced Technology, Chinese Academy of Sciences,</span>
           </div>
 
           <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>4</sup>Shenzhen Institute of Advanced Technology, Chinese Academy of Sciences,&nbsp;&nbsp;</span>
-          </div>
-
-          <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>5</sup>Shanghai Artificial Intelligence Laboratory,&nbsp;&nbsp;</span>
-            <span class="author-block"><sup>6</sup>Zhejiang University&nbsp;&nbsp;</span>
+            <span class="author-block"><sup>4</sup>University of Science and Technology of China&nbsp;&nbsp;</span>
+            <!-- <span class="author-block"><sup>5</sup>Shenzhen University of Advanced Technology&nbsp;&nbsp;</span> -->
           </div>
 
           <div class="is-size-6 publication-authors">
-            <span class="author-block"><sup>&dagger;</sup>Corresponding authors <sup>&spadesuit;</sup>Work done as interns at WeChat</span>
+            <span class="author-block"><sup>&dagger;</sup>Corresponding authors</span>
           </div>
-          
-          <!-- 修改：使用 Bulma Flex 类使链接居中 -->
+
           <div class="column has-text-centered">
-            <div class="publication-links is-flex is-justify-content-center is-align-items-center" style="gap: 10px;">
+            <div class="publication-links">
               <!-- PDF Link. -->
               <!-- <span class="link-block">
                 <a href="./xx.pdf" target="_blank"
@@ -155,7 +145,7 @@
                   </a>
               </span>
 
-              <!-- Video Link.
+              <!-- Video Link. -->
               <span class="link-block">
                 <a href="https://www.youtube.com/embed/ezRM2xF3fDw" target="_blank"
                    class="external-link button is-normal is-rounded is-dark">
@@ -164,244 +154,976 @@
                   </span>
                   <span>Video</span>
                 </a>
-              </span> -->
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="columns is-centered has-text-centered">
+      <h2 class="title is-3">Real-World Videos (upscale &times4)</h2>
+    </div>
+
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+
+        <div class="item">
+          <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5556">
+            <div class="desc">from internet</div>
+            <div class="video">
+              <video muted autoplay="autoplay" loop="loop" width="100%">
+                <source src="./assets/videos/inputs/catfar.mp4" type="video/mp4">
+              </video> 
+            </div>
+            <div class="video">
+              <video muted autoplay="autoplay" loop="loop" width="100%">
+                <source src="./assets/videos/outputs/catfar.mp4" type="video/mp4">
+              </video>
             </div>
           </div>
+        </div>
 
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
-<section class="section">
-  <div class="container is-max-desktop">
-    <!-- Abstract. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
-          <p>
-            Video editing increasingly demands the ability to incorporate specific real-world instances into existing footage, yet current approaches fundamentally fail to capture the unique visual characteristics of particular subjects and ensure natural instance/scene interactions. We formalize this overlooked yet critical editing paradigm as "<b>Get-In-Video Editing</b>", where users provide reference images to precisely specify visual elements they wish to incorporate into videos.
-            <br><br>
-            To address this task's dual challenges of severe training data scarcity and technical challenges in maintaining spatiotemporal coherence, we introduce three key contributions:
-            <br><br>
-            First, we develop <b>GetIn-1M</b> dataset created through our automated <em>Recognize-Track-Erase</em> pipeline, which sequentially performs video captioning, salient instance identification, object detection, temporal tracking, and instance removal to generate high-quality video editing pairs with comprehensive annotations (reference image, tracking mask, instance prompt).
-            <br><br>
-            Second, we present <b>GetInVideo</b>, a novel end-to-end framework that leverages a diffusion transformer architecture with <em>3D full attention</em> to process reference images, condition videos, and masks simultaneously, maintaining temporal coherence, preserving visual identity, and ensuring natural scene interactions when integrating reference objects into videos.
-            <br><br>
-            Finally, we establish <b>GetInBench</b>, the first comprehensive benchmark for Get-In-Video Editing scenario, demonstrating our approach's superior performance through extensive evaluations. Our work enables accessible, high-quality incorporation of specific real-world subjects into videos, significantly advancing personalized video editing capabilities.
-          </p>
-        </div>
-      </div>
-    </div>
-    <!--/ Abstract. -->
-  </div>
-</section>
-  
-<section class="section">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column">
-        <h2 class="title is-3">Method</h2>
-        <div class="content has-text-justified">
-          <p>
-            model_arch
-          </p>
-          <div class="column">
-            <img src="./assets/images/model_arch_00.png" />
+        <div class="item">
+          <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5556">
+            <div class="desc">from internet</div>
+            <div class="video">
+              <video muted autoplay="autoplay" loop="loop" width="100%">
+                <source src="./assets/videos/inputs/turtleating.mp4" type="video/mp4">
+              </video> 
+            </div>
+            <div class="video">
+              <video muted autoplay="autoplay" loop="loop" width="100%">
+                <source src="./assets/videos/outputs/turtleating.mp4" type="video/mp4">
+              </video>
+            </div>
           </div>
         </div>
-        <div class="content has-text-justified">
-          <p>
-            data_pipe
-          </p>
-          <div class="column">
-            <img src="./assets/images/data_pipe_00.png" />
+
+
+        <div class="item">
+          <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5556">
+            <div class="desc">from internet</div>
+            <div class="video">
+              <video muted autoplay="autoplay" loop="loop" width="100%">
+                <source src="./assets/videos/inputs/lufei.mp4" type="video/mp4">
+              </video> 
+            </div>
+            <div class="video">
+              <video muted autoplay="autoplay" loop="loop" width="100%">
+                <source src="./assets/videos/outputs/lufei.mp4" type="video/mp4">
+              </video>
+            </div>
           </div>
         </div>
-        <div class="content has-text-justified">
-          <p>
-            teaser
-          </p>
-          <div class="column">
-            <img src="./assets/images/teaser_00.png" />
+
+
+        <div class="item">
+          <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5556">
+            <div class="desc">from VideoLQ</div>
+            <div class="video">
+              <video muted autoplay="autoplay" loop="loop" width="100%">
+                <source src="./assets/videos/inputs/012.mp4" type="video/mp4">
+              </video> 
+            </div>
+            <div class="video">
+              <video muted autoplay="autoplay" loop="loop" width="100%">
+                <source src="./assets/videos/outputs/012.mp4" type="video/mp4">
+              </video>
+            </div>
           </div>
         </div>
-        <!-- Paper video.
-        <div id="spotlight-video">
-          <div class="container is-max-desktop">
-            <div class="column">
-              <h2 class="title is-3">
-                <span class="a">DiffVSR</span>
-                <span class="b">Demo</span>
-              </h2>
-              <div class="publication-video">
-                <iframe src="https://www.youtube.com/embed/ezRM2xF3fDw?rel=0&amp;showinfo=0"
-                        frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-              </div>
+
+
+        <div class="item">
+          <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5556">
+            <div class="desc">from VideoLQ</div>
+            <div class="video">
+              <video muted autoplay="autoplay" loop="loop" width="100%">
+                <source src="./assets/videos/inputs/013.mp4" type="video/mp4">
+              </video> 
+            </div>
+            <div class="video">
+              <video muted autoplay="autoplay" loop="loop" width="100%">
+                <source src="./assets/videos/outputs/013.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- <div class="item">
+          <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5556">
+            <div class="desc">Real-world video</div>
+            <div class="video">
+              <video muted autoplay="autoplay" loop="loop" width="100%">
+                <source src="./assets/videos/inputs/028.mp4" type="video/mp4">
+              </video> 
+            </div>
+            <div class="video">
+              <video muted autoplay="autoplay" loop="loop" width="100%">
+                <source src="./assets/videos/outputs/028.mp4" type="video/mp4">
+              </video>
             </div>
           </div>
         </div> -->
+
+
+        <div class="item">
+          <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5556">
+            <div class="desc">from VideoLQ</div>
+            <div class="video">
+              <video muted autoplay="autoplay" loop="loop" width="100%">
+                <source src="./assets/videos/inputs/032.mp4" type="video/mp4">
+              </video> 
+            </div>
+            <div class="video">
+              <video muted autoplay="autoplay" loop="loop" width="100%">
+                <source src="./assets/videos/outputs/032.mp4" type="video/mp4">
+              </video> 
+            </div>
+          </div>
+        </div>
+
+
+        <div class="item">
+          <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5556">
+            <div class="desc">from VideoLQ</div>
+            <div class="video">
+              <video muted autoplay="autoplay" loop="loop" width="100%">
+                <source src="./assets/videos/inputs/045.mp4" type="video/mp4">
+              </video> 
+            </div>
+            <div class="video">
+              <video muted autoplay="autoplay" loop="loop" width="100%">
+                <source src="./assets/videos/outputs/045.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+        </div>
+
+
       </div>
-    </div>
   </div>
 </section>
 
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="columns is-centered has-text-centered">
+      <h2 class="title is-3">Complex degraded videos (upscale &times4)</h2>
+    </div>
+
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+
+
+        <div class="item">
+          <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5556">
+            <div class="desc">Complex degraded video</div>
+            <div class="video">
+              <video muted autoplay="autoplay" loop="loop" width="100%">
+                <source src="./assets/videos1/inputs/002.mp4" type="video/mp4">
+              </video> 
+            </div>
+            <div class="video">
+              <video muted autoplay="autoplay" loop="loop" width="100%">
+                <source src="./assets/videos1/outputs/002.mp4" type="video/mp4">
+              </video> 
+            </div>
+          </div>
+        </div>
+
+
+        <div class="item">
+          <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5556">
+            <div class="desc">Complex degraded video</div>
+            <div class="video">
+              <video muted autoplay="autoplay" loop="loop" width="100%">
+                <source src="./assets/videos1/inputs/008.mp4" type="video/mp4">
+              </video> 
+            </div>
+            <div class="video">
+              <video muted autoplay="autoplay" loop="loop" width="100%">
+                <source src="./assets/videos1/outputs/008.mp4" type="video/mp4">
+              </video> 
+            </div>
+          </div>
+        </div>
+
+
+        <div class="item">
+          <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5556">
+            <div class="desc">Complex degraded video</div>
+            <div class="video">
+              <video muted autoplay="autoplay" loop="loop" width="100%">
+                <source src="./assets/videos1/inputs/013.mp4" type="video/mp4">
+              </video> 
+            </div>
+            <div class="video">
+              <video muted autoplay="autoplay" loop="loop" width="100%">
+                <source src="./assets/videos1/outputs/013.mp4" type="video/mp4">
+              </video> 
+            </div>
+          </div>
+        </div>
+
+
+        <div class="item">
+          <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5556">
+            <div class="desc">Complex degraded video</div>
+            <div class="video">
+              <video muted autoplay="autoplay" loop="loop" width="100%">
+                <source src="./assets/videos1/inputs/016.mp4" type="video/mp4">
+              </video> 
+            </div>
+            <div class="video">
+              <video muted autoplay="autoplay" loop="loop" width="100%">
+                <source src="./assets/videos1/outputs/016.mp4" type="video/mp4">
+              </video> 
+            </div>
+          </div>
+        </div>
+
+
+        <div class="item">
+          <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5556">
+            <div class="desc">Complex degraded video</div>
+            <div class="video">
+              <video muted autoplay="autoplay" loop="loop" width="100%">
+                <source src="./assets/videos1/inputs/030.mp4" type="video/mp4">
+              </video> 
+            </div>
+            <div class="video">
+              <video muted autoplay="autoplay" loop="loop" width="100%">
+                <source src="./assets/videos1/outputs/030.mp4" type="video/mp4">
+              </video> 
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="item">
+          <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5556">
+            <div class="desc">Complex degraded video</div>
+            <div class="video">
+              <video muted autoplay="autoplay" loop="loop" height="100%" style="object-position: center 10%;">
+                <source src="./assets/videos1/inputs/038.mp4" type="video/mp4">
+              </video> 
+            </div>
+            <div class="video">
+              <video muted autoplay="autoplay" loop="loop" height="100%" style="object-position: center 10%;">
+                <source src="./assets/videos1/outputs/038.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+        </div>
+
+        <!-- <div class="item">
+          <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5556">
+            <div class="desc">Complex degraded video</div>
+            <div class="video">
+              <video muted autoplay="autoplay" loop="loop" width="100%">
+                <source src="./assets/videos/input_An epic tornado attacking above a glowing city at night, the tornado is made of smoke-4.mp4" type="video/mp4">
+              </video> 
+            </div>
+            <div class="video">
+              <video muted autoplay="autoplay" loop="loop" width="100%">
+                <source src="./assets/videos/out_An epic tornado attacking above a glowing city at night, the tornado is made of smoke-4.mp4" type="video/mp4">
+              </video> 
+            </div>
+          </div>
+        </div> -->
+
+
+      </div>
+  </div>
+</section>
+
+
+
+<!-- <section class="section">
+  <div class="container">
+    <h2 class="title is-3 has-text-centered">Comparisons</h2>
+
+    <div class="slide-menu" style="margin-bottom: 2rem;">
+      <ul class="dots" style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;">
+        <li class="dot is-active" data-slide="0">
+          <img class="card-img" src="./assets/images/32.png" alt="Slide 1" style="width:80px; height:50px;">
+        </li>
+        <li class="dot" data-slide="1">
+          <img class="card-img" src="./assets/images/33.png" alt="Slide 2" style="width:80px; height:50px;">
+        </li>
+        <li class="dot" data-slide="2">
+          <img class="card-img" src="./assets/images/44.png" alt="Slide 3" style="width:80px; height:50px;">
+        </li>
+        <li class="dot" data-slide="3">
+          <img class="card-img" src="./assets/images/46.png" alt="Slide 4" style="width:80px; height:50px;">
+        </li>
+      </ul>
+    </div>
+
+
+    <div class="slide-content is-active" data-slide="0">
+
+      <div class="columns is-2x2">
+        <div>
+          <figure style="text-align: center;">
+            <video autoplay controls muted loop playsinline width="100%">
+              <source src="./assets/videos2/inputs/1.mp4" type="video/mp4">
+            </video>
+            <figcaption style="margin-top: 8px;"><b>Input</b></figcaption>
+          </figure>
+        </div>
+        <div>
+          <figure style="text-align: center;">
+            <video autoplay controls muted loop playsinline width="100%">
+              <source src="./assets/videos2/star/1.mp4" type="video/mp4">
+            </video>
+            <figcaption style="margin-top: 8px;"><b>STAR</b></figcaption>
+          </figure>
+        </div>
+        <div>
+          <figure style="text-align: center;">
+            <video autoplay controls muted loop playsinline width="100%">
+                <source src="./assets/videos2/seedvr/1.mp4" type="video/mp4">
+              </video>
+            <figcaption style="margin-top: 8px;"><b>SeedVR</b></figcaption>
+          </figure>
+        </div>
+        <div>
+          <figure style="text-align: center;">
+            <video autoplay controls muted loop playsinline width="100%">
+              <source src="./assets/videos2/ours/1.mp4" type="video/mp4">
+            </video>
+            <figcaption style="margin-top: 8px;"><b>Ours(DiffVSR)</b></figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="slide-content" data-slide="1">
+      <div class="columns is-2x2">
+        <div>
+          <figure style="text-align: center;">
+            <video autoplay controls muted loop playsinline width="100%">
+              <source src="./assets/videos2/inputs/2.mp4" type="video/mp4">
+            </video>
+            <figcaption style="margin-top: 8px;"><b>Input</b></figcaption>
+          </figure>
+        </div>
+        <div>
+          <figure style="text-align: center;">
+            <video autoplay controls muted loop playsinline width="100%">
+              <source src="./assets/videos2/star/2.mp4" type="video/mp4">
+            </video>
+            <figcaption style="margin-top: 8px;"><b>STAR</b></figcaption>
+          </figure>
+        </div>
+        <div>
+          <figure style="text-align: center;">
+            <video autoplay controls muted loop playsinline width="100%">
+              <source src="./assets/videos2/seedvr/2.mp4" type="video/mp4">
+            </video>
+            <figcaption style="margin-top: 8px;"><b>SeedVR</b></figcaption>
+          </figure>
+        </div>
+        <div>
+          <figure style="text-align: center;">
+            <video autoplay controls muted loop playsinline width="100%">
+              <source src="./assets/videos2/ours/2.mp4" type="video/mp4">
+            </video>
+            <figcaption style="margin-top: 8px;"><b>Ours(DiffVSR)</b></figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="slide-content" data-slide="2">
+      <div class="columns is-2x2">
+        <div>
+          <figure style="text-align: center;">
+            <video autoplay controls muted loop playsinline width="100%">
+              <source src="./assets/videos2/inputs/3.mp4" type="video/mp4">
+            </video>
+            <figcaption style="margin-top: 8px;"><b>Input</b></figcaption>
+          </figure>
+        </div>
+        <div>
+          <figure style="text-align: center;">
+            <video autoplay controls muted loop playsinline width="100%">
+              <source src="./assets/videos2/star/3.mp4" type="video/mp4">
+            </video>
+            <figcaption style="margin-top: 8px;"><b>STAR</b></figcaption>
+          </figure>
+        </div>
+        <div>
+          <figure style="text-align: center;">
+            <video autoplay controls muted loop playsinline width="100%">
+              <source src="./assets/videos2/seedvr/3.mp4" type="video/mp4">
+            </video>
+            <figcaption style="margin-top: 8px;"><b>SeedVR</b></figcaption>
+          </figure>
+        </div>
+        <div>
+          <figure style="text-align: center;">
+            <video autoplay controls muted loop playsinline width="100%">
+              <source src="./assets/videos2/ours/3.mp4" type="video/mp4">
+            </video>
+            <figcaption style="margin-top: 8px;"><b>Ours(DiffVSR)</b></figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="slide-content" data-slide="3">
+      <div class="columns is-2x2">
+        <div>
+          <figure style="text-align: center;">
+            <video autoplay controls muted loop playsinline width="100%">
+              <source src="./assets/videos2/inputs/4.mp4" type="video/mp4">
+            </video>
+            <figcaption style="margin-top: 8px;"><b>Input</b></figcaption>
+          </figure>
+        </div>
+        <div>
+          <figure style="text-align: center;">
+            <video autoplay controls muted loop playsinline width="100%">
+              <source src="./assets/videos2/star/4.mp4" type="video/mp4">
+            </video>
+            <figcaption style="margin-top: 8px;"><b>STAR</b></figcaption>
+          </figure>
+        </div>
+        <div>
+          <figure style="text-align: center;">
+            <video autoplay controls muted loop playsinline width="100%">
+              <source src="./assets/videos2/seedvr/4.mp4" type="video/mp4">
+            </video>
+            <figcaption style="margin-top: 8px;"><b>SeedVR</b></figcaption>
+          </figure>
+        </div>
+        <div>
+          <figure style="text-align: center;">
+            <video autoplay controls muted loop playsinline width="100%">
+              <source src="./assets/videos2/ours/4.mp4" type="video/mp4">
+            </video>
+            <figcaption style="margin-top: 8px;"><b>Ours(DiffVSR)</b></figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section> -->
+<!-- 
 <section class="section">
   <div class="container">
-    <h2 class="title is-3 has-text-centered">Generated video result</h2>
-    
-    <!-- 修改为参考图像+视频对比的布局 -->
-    <div class="columns is-centered">
-      <!-- 左侧参考图像 -->
-      <div class="column is-one-third">
-        <figure style="text-align:center;">
-          <img src="./assets/videos/bag/reference_images/reference_image1.png" alt="Reference Image" style="max-width:100%; border:2px solid #ccc; border-radius:8px;">
-          <figcaption style="margin-top:8px;"><b>参考图像</b></figcaption>
-        </figure>
+
+
+    <h2 class="title is-3 has-text-centered">Comparisons</h2>
+    <div class="slide-menu" style="margin-bottom: 2rem;">
+      <ul class="dots" style="display:flex; justify-content:center; gap:2rem; flex-wrap:wrap;">
+        <li class="dot is-active" data-slide="0">
+          <img class="card-img" src="./assets/images/32.png" alt="Slide 1" style="width:80px; height:50px;">
+        </li>
+        <li class="dot" data-slide="1">
+          <img class="card-img" src="./assets/images/33.png" alt="Slide 2" style="width:80px; height:50px;">
+        </li>
+        <li class="dot" data-slide="2">
+          <img class="card-img" src="./assets/images/44.png" alt="Slide 3" style="width:80px; height:50px;">
+        </li>
+        <li class="dot" data-slide="3">
+          <img class="card-img" src="./assets/images/46.png" alt="Slide 4" style="width:80px; height:50px;">
+        </li>
+      </ul>
+    </div>
+
+
+    <div class="slide-content is-active" data-slide="0">
+
+      <div class="columns is-2x1">
+        <div>
+          <figure style="text-align:center;">
+            <video autoplay controls muted loop playsinline width="100%">
+              <source src="./assets/videos2/star_diffvsr/concat_1.mp4" type="video/mp4">
+            </video>
+            <figcaption style="margin-top:8px;">
+              <b>STAR VS DiffVSR</b>
+            </figcaption>
+          </figure>
+        </div>
+        <div>
+          <figure style="text-align:center;">
+            <video autoplay controls muted loop playsinline width="100%">
+              <source src="./assets/videos2/seedvr_diffvsr/concat_1.mp4" type="video/mp4">
+            </video>
+            <figcaption style="margin-top:8px;">
+              <b>SeedVR VS DiffVSR</b>
+            </figcaption>
+          </figure>
+        </div>
       </div>
-      
-      <!-- 右侧视频对比 -->
-      <div class="column is-two-thirds">
+
+      <div class="columns is-four-images">
         <figure style="text-align:center;">
-          <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5556">
-            <div class="video">
-              <video muted autoplay loop width="100%">
-                <source src="./assets/videos/bag/condition_video/condition_video.mp4" type="video/mp4">
-              </video>
-            </div>
-            <div class="video">
-              <video muted autoplay loop width="100%">
-                <source src="./assets/videos/bag/generated_video/output.mp4" type="video/mp4">
-              </video>
-            </div>
-          </div>
-          <figcaption style="margin-top:8px;"><b>原始视频 vs. 生成视频</b></figcaption>
+          <img src="./assets/images/slide1_img1.jpg" alt="Scene 1.1"/>
+          <figcaption style="margin-top:8px;">Frame 1</figcaption>
+        </figure>
+        <figure style="text-align:center;">
+          <img src="./assets/images/slide1_img2.jpg" alt="Scene 1.2"/>
+          <figcaption style="margin-top:8px;">Frame 2</figcaption>
+        </figure>
+        <figure style="text-align:center;">
+          <img src="./assets/images/slide1_img3.jpg" alt="Scene 1.3"/>
+          <figcaption style="margin-top:8px;">Frame 3</figcaption>
+        </figure>
+        <figure style="text-align:center;">
+          <img src="./assets/images/slide1_img4.jpg" alt="Scene 1.4"/>
+          <figcaption style="margin-top:8px;">Frame 4</figcaption>
         </figure>
       </div>
     </div>
 
-    <!-- 添加更多示例，每个都是独立的行 -->
-    <div class="columns is-centered" style="margin-top: 3rem;">
-      <div class="column is-one-third">
-        <figure style="text-align:center;">
-          <img src="./assets/videos/capybara/reference_images/reference_image1.png" alt="Reference Image" style="max-width:100%; border:2px solid #ccc; border-radius:8px;">
-          <figcaption style="margin-top:8px;"><b>参考图像</b></figcaption>
-        </figure>
+
+    <div class="slide-content" data-slide="1">
+      <div class="columns is-2x1">
+        <div>
+          <figure style="text-align:center;">
+            <video autoplay controls muted loop playsinline width="100%">
+              <source src="./assets/videos2/star_diffvsr/concat_2.mp4" type="video/mp4">
+            </video>
+            <figcaption style="margin-top:8px;"><b>STAR VS DiffVSR</b></figcaption>
+          </figure>
+        </div>
+        <div>
+          <figure style="text-align:center;">
+            <video autoplay controls muted loop playsinline width="100%">
+              <source src="./assets/videos2/seedvr_diffvsr/concat_2.mp4" type="video/mp4">
+            </video>
+            <figcaption style="margin-top:8px;"><b>SeedVR VS DiffVSR</b></figcaption>
+          </figure>
+        </div>
       </div>
-      <div class="column is-two-thirds">
+      <div class="columns is-four-images">
         <figure style="text-align:center;">
-          <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5556">
-            <div class="video">
-              <video muted autoplay loop width="100%">
-                <source src="./assets/videos/capybara/condition_video/condition_video.mp4" type="video/mp4">
-              </video>
-            </div>
-            <div class="video">
-              <video muted autoplay loop width="100%">
-                <source src="./assets/videos/capybara/generated_video/output.mp4" type="video/mp4">
-              </video>
-            </div>
-          </div>
-          <figcaption style="margin-top:8px;"><b>原始视频 vs. 生成视频</b></figcaption>
+          <img src="./assets/images/slide1_img1.jpg" alt="Scene 2.1"/>
+          <figcaption style="margin-top:8px;">Frame 1</figcaption>
+        </figure>
+        <figure style="text-align:center;">
+          <img src="./assets/images/slide1_img2.jpg" alt="Scene 2.2"/>
+          <figcaption style="margin-top:8px;">Frame 2</figcaption>
+        </figure>
+        <figure style="text-align:center;">
+          <img src="./assets/images/slide1_img3.jpg" alt="Scene 2.3"/>
+          <figcaption style="margin-top:8px;">Frame 3</figcaption>
+        </figure>
+        <figure style="text-align:center;">
+          <img src="./assets/images/slide1_img4.jpg" alt="Scene 2.4"/>
+          <figcaption style="margin-top:8px;">Frame 4</figcaption>
         </figure>
       </div>
     </div>
 
-    <div class="columns is-centered" style="margin-top: 3rem;">
-      <div class="column is-one-third">
-        <figure style="text-align:center;">
-          <img src="./assets/videos/dragon/reference_images/reference_image1.png" alt="Reference Image" style="max-width:100%; border:2px solid #ccc; border-radius:8px;">
-          <figcaption style="margin-top:8px;"><b>参考图像</b></figcaption>
-        </figure>
+    <div class="slide-content" data-slide="2">
+      <div class="columns is-2x1">
+        <div>
+          <figure style="text-align:center;">
+            <video autoplay controls muted loop playsinline width="100%">
+              <source src="./assets/videos2/star_diffvsr/concat_3.mp4" type="video/mp4">
+            </video>
+            <figcaption style="margin-top:8px;"><b>STAR VS DiffVSR</b></figcaption>
+          </figure>
+        </div>
+        <div>
+          <figure style="text-align:center;">
+            <video autoplay controls muted loop playsinline width="100%">
+              <source src="./assets/videos2/seedvr_diffvsr/concat_3.mp4" type="video/mp4">
+            </video>
+            <figcaption style="margin-top:8px;"><b>SeedVR VS DiffVSR</b></figcaption>
+          </figure>
+        </div>
       </div>
-      <div class="column is-two-thirds">
+      <div class="columns is-four-images">
         <figure style="text-align:center;">
-          <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5556">
-            <div class="video">
-              <video muted autoplay loop width="100%">
-                <source src="./assets/videos/dragon/condition_video/condition_video.mp4" type="video/mp4">
-              </video>
-            </div>
-            <div class="video">
-              <video muted autoplay loop width="100%">
-                <source src="./assets/videos/dragon/generated_video/output.mp4" type="video/mp4">
-              </video>
-            </div>
-          </div>
-          <figcaption style="margin-top:8px;"><b>原始视频 vs. 生成视频</b></figcaption>
+          <img src="./assets/images_crop/1_crop/inputs_patch.png" alt="Scene 3.1"/>
+          <figcaption style="margin-top:8px;">Input</figcaption>
         </figure>
-      </div>
-    </div>
-
-    <div class="columns is-centered" style="margin-top: 3rem;">
-      <div class="column is-one-third">
         <figure style="text-align:center;">
-          <img src="./assets/videos/girl/reference_images/reference_image1.png" alt="Reference Image" style="max-width:100%; border:2px solid #ccc; border-radius:8px;">
-          <figcaption style="margin-top:8px;"><b>参考图像</b></figcaption>
+          <img src="./assets/images_crop/1_crop/seedvr_patch.png" alt="Scene 3.2"/>
+          <figcaption style="margin-top:8px;">SeedVR</figcaption>
         </figure>
-      </div>
-      <div class="column is-two-thirds">
         <figure style="text-align:center;">
-          <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5556">
-            <div class="video">
-              <video muted autoplay loop width="100%">
-                <source src="./assets/videos/girl/condition_video/condition_video.mp4" type="video/mp4">
-              </video>
-            </div>
-            <div class="video">
-              <video muted autoplay loop width="100%">
-                <source src="./assets/videos/girl/generated_video/output.mp4" type="video/mp4">
-              </video>
-            </div>
-          </div>
-          <figcaption style="margin-top:8px;"><b>原始视频 vs. 生成视频</b></figcaption>
+          <img src="./assets/images_crop/1_crop/star_patch.png" alt="Scene 3.3"/>
+          <figcaption style="margin-top:8px;">STAR</figcaption>
+        </figure>
+        <figure style="text-align:center;">
+          <img src="./assets/images_crop/1_crop/ours_patch.png" alt="Scene 3.4"/>
+          <figcaption style="margin-top:8px;">DiffVSR</figcaption>
         </figure>
       </div>
     </div>
 
-    <div class="columns is-centered" style="margin-top: 3rem;">
-      <div class="column is-one-third">
-        <figure style="text-align:center;">
-          <img src="./assets/videos/three_people/reference_images/reference_image1.jpg" alt="Reference Image" style="max-width:100%; border:2px solid #ccc; border-radius:8px;">
-          <figcaption style="margin-top:8px;"><b>参考图像</b></figcaption>
-        </figure>
+
+    <div class="slide-content" data-slide="3">
+      <div class="columns is-2x1">
+        <div>
+          <figure style="text-align:center;">
+            <video autoplay controls muted loop playsinline width="100%">
+              <source src="./assets/videos2/star_diffvsr/concat_4.mp4" type="video/mp4">
+            </video>
+            <figcaption style="margin-top:8px;"><b>STAR VS DiffVSR</b></figcaption>
+          </figure>
+        </div>
+        <div>
+          <figure style="text-align:center;">
+            <video autoplay controls muted loop playsinline width="100%">
+              <source src="./assets/videos2/seedvr_diffvsr/concat_4.mp4" type="video/mp4">
+            </video>
+            <figcaption style="margin-top:8px;"><b>SeedVR VS DiffVSR</b></figcaption>
+          </figure>
+        </div>
       </div>
-      <div class="column is-two-thirds">
+      <div class="columns is-four-images">
         <figure style="text-align:center;">
-          <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5556">
-            <div class="video">
-              <video muted autoplay loop width="100%">
-                <source src="./assets/videos/three_people/condition_video/condition_video.mp4" type="video/mp4">
-              </video>
-            </div>
-            <div class="video">
-              <video muted autoplay loop width="100%">
-                <source src="./assets/videos/three_people/generated_video/output.mp4" type="video/mp4">
-              </video>
-            </div>
-          </div>
-          <figcaption style="margin-top:8px;"><b>原始视频 vs. 生成视频</b></figcaption>
+          <img src="./assets/images_crop/4_crop/inputs_patch.png" alt="Scene 4.1"/>
+          <figcaption style="margin-top:8px;">Input</figcaption>
+        </figure>
+        <figure style="text-align:center;">
+          <img src="./assets/images_crop/4_crop/seedvr_patch.png" alt="Scene 4.2"/>
+          <figcaption style="margin-top:8px;">SeedVR</figcaption>
+        </figure>
+        <figure style="text-align:center;">
+          <img src="./assets/images_crop/4_crop/star_patch.png" alt="Scene 4.3"/>
+          <figcaption style="margin-top:8px;">STAR</figcaption>
+        </figure>
+        <figure style="text-align:center;">
+          <img src="./assets/images_crop/4_crop/ours_patch.png" alt="Scene 4.4"/>
+          <figcaption style="margin-top:8px;">DiffVSR</figcaption>
         </figure>
       </div>
     </div>
+
   </div>
 </section>
 
 <script>
-  // 初始化所有twentytwenty容器
-  $(document).ready(function() {
-    $('.twentytwenty-container').twentytwenty();
-    
-    // 确保视频加载后重新初始化twentytwenty
-    $('video').on('loadeddata', function() {
-      $(this).closest('.twentytwenty-container').twentytwenty();
+  // 点击切换逻辑
+  document.querySelectorAll('.slide-menu .dot').forEach(dot => {
+    dot.addEventListener('click', () => {
+      // 移除所有 dot 的激活态
+      document.querySelectorAll('.slide-menu .dot').forEach(d => d.classList.remove('is-active'));
+      dot.classList.add('is-active');
+
+      const slideIndex = dot.getAttribute('data-slide');
+      // 隐藏所有 slide
+      document.querySelectorAll('.slide-content').forEach(slide => {
+        slide.classList.remove('is-active');
+      });
+      // 只显示点击对应的那个 slide
+      document.querySelector(`.slide-content[data-slide="${slideIndex}"]`).classList.add('is-active');
+    });
+  });
+</script> -->
+
+<section class="section">
+  <div class="container">
+    <h2 class="title is-3 has-text-centered">Comparisons</h2>
+
+    <!-- 缩略图切换 -->
+    <div class="slide-menu" style="margin-bottom: 2rem;">
+      <ul class="dots" style="display:flex; justify-content:center; gap:2rem; flex-wrap:wrap;">
+        <li class="dot is-active" data-slide="0">
+          <img class="card-img" src="./assets/images/32.png" alt="Slide 1" style="width:80px; height:50px;">
+        </li>
+        <li class="dot" data-slide="1">
+          <img class="card-img" src="./assets/images/33.png" alt="Slide 2" style="width:80px; height:50px;">
+        </li>
+        <li class="dot" data-slide="2">
+          <img class="card-img" src="./assets/images/44.png" alt="Slide 3" style="width:80px; height:50px;">
+        </li>
+        <li class="dot" data-slide="3">
+          <img class="card-img" src="./assets/images/46.png" alt="Slide 4" style="width:80px; height:50px;">
+        </li>
+      </ul>
+    </div>
+
+    <!-- Slide 1 -->
+    <div class="slide-content is-active" data-slide="0">
+      <div class="columns is-2x1">
+        <!-- 上部分（放在第1行） -->
+        <div>
+          <figure style="text-align:center;">
+            <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5556">
+              <!-- 这里也可以保留 desc，如有需要 -->
+              <!-- <div class="desc">Demo #1 (Top Part)</div> -->
+              <div class="video">
+                <video muted autoplay loop width="100%">
+                  <source src="./assets/videos2/star/1.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="video">
+                <video muted autoplay loop width="100%">
+                  <source src="./assets/videos2/ours/1.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
+            <figcaption style="margin-top:8px;"><b>STAR vs. DiffVSR</b></figcaption>
+          </figure>
+        </div>
+        <!-- 下部分（放在第2行） -->
+        <div>
+          <figure style="text-align:center;">
+            <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5556">
+              <!-- <div class="desc">Demo #1 (Bottom Part)</div> -->
+              <div class="video">
+                <video muted autoplay loop width="100%">
+                  <source src="./assets/videos2/seedvr/1.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="video">
+                <video muted autoplay loop width="100%">
+                  <source src="./assets/videos2/ours/1.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
+            <figcaption style="margin-top:8px;"><b>SeedVR vs. DiffVSR</b></figcaption>
+          </figure>
+        </div>
+      </div>
+      <!-- 下面的四个图 -->
+      <div class="columns is-four-images">
+        <figure style="text-align:center;">
+          <img src="./assets/images_crop/1_crop/inputs_patch.png" alt="Scene 1.1"/>
+          <figcaption style="margin-top:8px;">Input</figcaption>
+        </figure>
+        <figure style="text-align:center;">
+          <img src="./assets/images_crop/1_crop/seedvr_patch.png" alt="Scene 1.2"/>
+          <figcaption style="margin-top:8px;">SeedVR</figcaption>
+        </figure>
+        <figure style="text-align:center;">
+          <img src="./assets/images_crop/1_crop/star_patch.png" alt="Scene 1.3"/>
+          <figcaption style="margin-top:8px;">STAR</figcaption>
+        </figure>
+        <figure style="text-align:center;">
+          <img src="./assets/images_crop/1_crop/ours_patch.png" alt="Scene 1.4"/>
+          <figcaption style="margin-top:8px;">DiffVSR</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="slide-content" data-slide="1">
+      <div class="columns is-2x1">
+        <div>
+          <figure style="text-align:center;">
+            <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5556">
+              <div class="video">
+                <video muted autoplay loop width="100%">
+                  <source src="./assets/videos2/star/2.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="video">
+                <video muted autoplay loop width="100%">
+                  <source src="./assets/videos2/ours/2.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
+            <figcaption style="margin-top:8px;"><b>STAR vs. DiffVSR</b></figcaption>
+          </figure>
+        </div>
+        <div>
+          <figure style="text-align:center;">
+            <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5556">
+              <div class="video">
+                <video muted autoplay loop width="100%">
+                  <source src="./assets/videos2/seedvr/2.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="video">
+                <video muted autoplay loop width="100%">
+                  <source src="./assets/videos2/ours/2.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
+            <figcaption style="margin-top:8px;"><b>SeedVR vs. DiffVSR</b></figcaption>
+          </figure>
+        </div>
+      </div>
+      <div class="columns is-four-images">
+        <figure style="text-align:center;">
+          <img src="./assets/images_crop/2_crop/inputs_patch.png" alt="Scene 2.1"/>
+          <figcaption style="margin-top:8px;">Input</figcaption>
+        </figure>
+        <figure style="text-align:center;">
+          <img src="./assets/images_crop/2_crop/seedvr_patch.png" alt="Scene 2.2"/>
+          <figcaption style="margin-top:8px;">SeedVR</figcaption>
+        </figure>
+        <figure style="text-align:center;">
+          <img src="./assets/images_crop/2_crop/star_patch.png" alt="Scene 2.3"/>
+          <figcaption style="margin-top:8px;">STAR</figcaption>
+        </figure>
+        <figure style="text-align:center;">
+          <img src="./assets/images_crop/2_crop/ours_patch.png" alt="Scene 2.4"/>
+          <figcaption style="margin-top:8px;">DiffVSR</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <!-- Slide 3 -->
+    <div class="slide-content" data-slide="2">
+      <div class="columns is-2x1">
+        <div>
+          <figure style="text-align:center;">
+            <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5556">
+              <div class="video">
+                <video muted autoplay loop width="100%">
+                  <source src="./assets/videos2/star/3.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="video">
+                <video muted autoplay loop width="100%">
+                  <source src="./assets/videos2/ours/3.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
+            <figcaption style="margin-top:8px;"><b>STAR vs. DiffVSR</b></figcaption>
+          </figure>
+        </div>
+        <div>
+          <figure style="text-align:center;">
+            <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5556">
+              <div class="video">
+                <video muted autoplay loop width="100%">
+                  <source src="./assets/videos2/seedvr/3.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="video">
+                <video muted autoplay loop width="100%">
+                  <source src="./assets/videos2/ours/3.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
+            <figcaption style="margin-top:8px;"><b>SeedVR vs. DiffVSR</b></figcaption>
+          </figure>
+        </div>
+      </div>
+      <div class="columns is-four-images">
+        <figure style="text-align:center;">
+          <img src="./assets/images_crop/3_crop/inputs_patch.png" alt="Scene 3.1"/>
+          <figcaption style="margin-top:8px;">Input</figcaption>
+        </figure>
+        <figure style="text-align:center;">
+          <img src="./assets/images_crop/3_crop/seedvr_patch.png" alt="Scene 3.2"/>
+          <figcaption style="margin-top:8px;">SeedVR</figcaption>
+        </figure>
+        <figure style="text-align:center;">
+          <img src="./assets/images_crop/3_crop/star_patch.png" alt="Scene 3.3"/>
+          <figcaption style="margin-top:8px;">STAR</figcaption>
+        </figure>
+        <figure style="text-align:center;">
+          <img src="./assets/images_crop/3_crop/ours_patch.png" alt="Scene 3.4"/>
+          <figcaption style="margin-top:8px;">DiffVSR</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <!-- Slide 4 -->
+    <div class="slide-content" data-slide="3">
+      <div class="columns is-2x1">
+        <div>
+          <figure style="text-align:center;">
+            <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5556">
+              <div class="video">
+                <video muted autoplay loop width="100%">
+                  <source src="./assets/videos2/star/4.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="video">
+                <video muted autoplay loop width="100%">
+                  <source src="./assets/videos2/ours/4.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
+            <figcaption style="margin-top:8px;"><b>STAR vs. DiffVSR</b></figcaption>
+          </figure>
+        </div>
+        <div>
+          <figure style="text-align:center;">
+            <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5556">
+              <div class="video">
+                <video muted autoplay loop width="100%">
+                  <source src="./assets/videos2/seedvr/4.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="video">
+                <video muted autoplay loop width="100%">
+                  <source src="./assets/videos2/ours/4.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
+            <figcaption style="margin-top:8px;"><b>SeedVR vs. DiffVSR</b></figcaption>
+          </figure>
+        </div>
+      </div>
+      <div class="columns is-four-images">
+        <figure style="text-align:center;">
+          <img src="./assets/images_crop/4_crop/inputs_patch.png" alt="Scene 4.1"/>
+          <figcaption style="margin-top:8px;">Input</figcaption>
+        </figure>
+        <figure style="text-align:center;">
+          <img src="./assets/images_crop/4_crop/seedvr_patch.png" alt="Scene 4.2"/>
+          <figcaption style="margin-top:8px;">SeedVR</figcaption>
+        </figure>
+        <figure style="text-align:center;">
+          <img src="./assets/images_crop/4_crop/star_patch.png" alt="Scene 4.3"/>
+          <figcaption style="margin-top:8px;">STAR</figcaption>
+        </figure>
+        <figure style="text-align:center;">
+          <img src="./assets/images_crop/4_crop/ours_patch.png" alt="Scene 4.4"/>
+          <figcaption style="margin-top:8px;">DiffVSR</figcaption>
+        </figure>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script>
+  // 点击缩略图切换逻辑
+  document.querySelectorAll('.slide-menu .dot').forEach(dot => {
+    dot.addEventListener('click', () => {
+      // 移除所有 dot 的激活态
+      document.querySelectorAll('.slide-menu .dot').forEach(d => d.classList.remove('is-active'));
+      dot.classList.add('is-active');
+
+      const slideIndex = dot.getAttribute('data-slide');
+      // 隐藏所有 slide
+      document.querySelectorAll('.slide-content').forEach(slide => {
+        slide.classList.remove('is-active');
+      });
+      // 只显示点击对应的那个 slide
+      document.querySelector(`.slide-content[data-slide="${slideIndex}"]`).classList.add('is-active');
+      // 触发一次重绘：让 TwentyTwenty 能够拿到正确的宽高重新绘制
+      $(window).trigger('resize');
+      // 或者给可见 slide 内部的 .twentytwenty-container 再初始化一次
+      $(activeSlide).find('.twentytwenty-container').twentytwenty();
     });
   });
 </script>
 
-<!-- <section class="teaser">
+
+<section class="teaser">
   <div class="container">
     <div class="content has-text-justified">
       <ol type="a">
@@ -411,9 +1133,99 @@
       </ol>
     </div>
   </div>
-</section> -->
+</section>
 
 <div style="margin-bottom: 3rem;"></div>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+      <!-- <div class="column"> -->
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Diffusion models have demonstrated exceptional capabilities in image restoration, yet their application to video super-resolution (VSR) faces significant challenges in balancing fidelity with temporal consistency. 
+            Our evaluation reveals a critical gap: existing approaches consistently fail on severely degraded videos--precisely where diffusion models' generative capabilities are most needed. 
+            
+            We identify that existing diffusion-based VSR methods struggle primarily because they face an overwhelming learning burden: simultaneously modeling complex degradation distributions, content representations, and temporal relationships with limited high-quality training data. 
+            
+            To address this fundamental challenge, we present <b>DiffVSR</b>, featuring a <em>Progressive Learning Strategy (PLS)</em> that systematically decomposes this learning burden through staged training, enabling superior performance on complex degradations. 
+            Our framework additionally incorporates an <em>Interweaved Latent Transition (ILT)</em> technique that maintains competitive temporal consistency without additional training overhead. 
+            
+            Experiments demonstrate that our approach excels in scenarios where competing methods struggle, particularly on severely degraded videos. 
+            Our work reveals that addressing the learning strategy, rather than focusing solely on architectural complexity, is the critical path toward robust real-world video super-resolution with diffusion models.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <!-- <div class="column is-four-fifths"> -->
+      <div class="column">
+        <h2 class="title is-3">Method</h2>
+        <div class="content has-text-justified">
+          <p>
+            Overview of our proposed DiffVSR framework. (a) Model architecture with enhanced UNet and VAE. (b) Architectural improvements for feature extraction and reconstruction. (c) Progressive Learning Strategy (PLS), our core innovation for handling complex degradations. (d) Multi-Scale Temporal Attention (MSTA) for capturing temporal dependencies at different scales.
+          </p>
+          <div class="column">
+            <img src="./assets/images/DiffVSR_method.png" />
+          </div>
+        </div>
+
+        <div class="content has-text-justified">
+          <p>
+            Interweaved Latent Transition approach illustrated. By combining strategic noise rescheduling across overlapping regions with position-based latent interpolation between adjacent subsequences, this lightweight solution ensures temporal consistency without requiring additional training or computational resources.
+          </p>
+          <div class="column">
+            <img src="./assets/images/ILT.png" />
+          </div>
+        </div>
+
+    
+
+        <!-- Paper video. -->
+          <div id="spotlight-video">
+            <div class="container is-max-desktop">
+                <div class="column">
+                  <h2 class="title is-3">
+                    <span class="a">DiffVSR</span>
+                    <span class="b">Demo</span>
+                  </h2>
+                  <div class="publication-video">
+                    <iframe src="https://www.youtube.com/embed/ezRM2xF3fDw?rel=0&amp;showinfo=0"
+                            frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                  </div>
+              </div>
+            </div>
+          </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- <section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{he2024venhancer,
+      title={VEnhancer: Generative Space-Time Enhancement for Video Generation},
+      author={He, Jingwen and Xue, Tianfan and Liu, Dongyang and Lin, Xinqi and Gao, Peng and Lin, Dahua and Qiao, Yu and Ouyang, Wanli and Liu, Ziwei},
+      journal={arXiv preprint arXiv:2407.07667},
+      year={2024}
+    }
+}</code></pre>
+  </div>
+</section> -->
+
 
 <footer class="footer">
   <div class="container">
@@ -432,16 +1244,14 @@
     <div class="columns is-centered">
       <div class="column is-8">
         <div class="content">
-          <div class="columns is-centered">
-            <p>
-              This website template is borrowed from <a href="https://github.com/nerfies/nerfies.github.io" target="_blank">Here</a>. 
-            </p>
-          </div>
+          <div class="columns is-centered"><p>
+            This website template is borrowed from <a href="https://github.com/nerfies/nerfies.github.io" target="_blank">Here</a>. 
+          </p></div>
         </div>
       </div>
     </div>
 
-    <!-- Visitor Plugin (可选) -->
+    <!--=================Visitor==========================-->
     <!-- <div class="content has-text-centered" style="padding:0 0 0 0">
       <img src='https://visitor-badge.laobi.icu/badge?page_id=Vchitect/VEnhancer' alt='visitors'>
     </div> -->
@@ -449,7 +1259,168 @@
   </div>
 </footer>
 
+  <!-- custom js file  -->
+  <!-- <script defer src="./assets/js/fontawesome.all.min.js"></script> -->
+  <script src="./assets/js/bulma-carousel.min.js"></script>
+  <script src="./assets/js/bulma-slider.min.js"></script>
+  <script src="./assets/js/index.js"></script>
+  <script src="./assets/js/jquery.event.move.js"></script>
+  <script src="./assets/js/jquery.twentytwenty.js"></script>
+  <script>
+    bulmaCarousel.attach('#results-carousel', {
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      infinite: true,
+      autoplay: true,
+      navigation: true
+    });
 
+  // 初始化twentytwenty比较功能
+  $(function(){
+    $(".twentytwenty-container").twentytwenty();
+    // $(".twentytwenty-container", "#results-carousel").twentytwenty({default_offset_pct: 0.5, ratio: 0.5});
+  });
+  </script>
+
+
+  <!-- 引入 Bulma CSS （需要时再加，如果已有可忽略） -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <!-- <style>
+    /* 如果想固定强制 2×2，可自行覆盖 Bulma 样式，如下： */
+    .columns.is-2x2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr; /* 两列 */
+      grid-template-rows: auto auto;  /* 两行 */
+      gap: 1rem;
+    }
+    .slide-content {
+      display: none; /* 默认隐藏 */
+    }
+    .slide-content.is-active {
+      display: block; /* 显示被选中的 slide */
+    }
+    /* 去除底部小圆点上的默认背景 */
+    .dots .dot {
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+    .card-img {
+      border: 2px solid #c1bfbf;
+      border-radius: 8px;
+      padding: 2px;
+      display: inline-block;
+      transition: transform 0.3s ease-in-out;
+      transform-origin: center center;
+    }
+    .card-img:active {
+      transform: scale(1.2);
+    }
+  </style> -->
+<!-- 
+  <style>
+    /* 上下两个视频布局：1列2行 */
+    .columns.is-2x1 {
+      display: grid;
+      grid-template-columns: 1fr;     /* 1 列 */
+      grid-template-rows: auto auto; /* 2 行 */
+      gap: 1rem;
+    }
+    /* 默认隐藏每个slide */
+    .slide-content {
+      display: none;
+    }
+    /* 只显示被点选的slide */
+    .slide-content.is-active {
+      display: block;
+    }
+    /* 去掉小圆点默认背景 */
+    .dots .dot {
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+    /* 缩略图样式 (可按需保留/修改) */
+    .card-img {
+      border: 2px solid #c1bfbf;
+      border-radius: 8px;
+      padding: 2px;
+      display: inline-block;
+      transition: transform 0.3s ease-in-out;
+      transform-origin: center center;
+    }
+    .card-img:active {
+      transform: scale(1.2);
+    }
+    /* 让四张图片等分排列在一行 */
+    .columns.is-four-images {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr); /* 一行四列 */
+      gap: 1rem;
+      margin-top: 1.5rem; /* 与上方视频留点间隔 */
+    }
+    /* 如果要让图片自适应宽度，可以加: */
+    .columns.is-four-images img {
+      width: 100%;
+      height: auto;
+      border: 2px solid #ccc;
+      border-radius: 4px;
+    }
+  </style> -->
+
+  <style>
+    /* 上下两个内容布局：1列2行 */
+    .columns.is-2x1 {
+      display: grid;
+      grid-template-columns: 1fr;     /* 1 列 */
+      grid-template-rows: auto auto; /* 2 行 */
+      gap: 1rem;
+    }
+
+    /* 默认隐藏每个 slide */
+    .slide-content {
+      display: none;
+    }
+
+    /* 只显示被点选的 slide */
+    .slide-content.is-active {
+      display: block;
+    }
+
+    /* 去掉小圆点默认背景 */
+    .dots .dot {
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    /* 缩略图样式 (可按需保留/修改) */
+    .card-img {
+      border: 2px solid #c1bfbf;
+      border-radius: 8px;
+      padding: 2px;
+      display: inline-block;
+      transition: transform 0.3s ease-in-out;
+      transform-origin: center center;
+    }
+    .card-img:active {
+      transform: scale(1.2);
+    }
+
+    /* 让四张图片等分排列在一行 */
+    .columns.is-four-images {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr); /* 一行四列 */
+      gap: 1rem;
+      margin-top: 1.5rem; /* 与上方留些间隔 */
+    }
+    .columns.is-four-images img {
+      width: 100%;
+      height: auto;
+      border: 2px solid #ccc;
+      border-radius: 4px;
+    }
+  </style>
 
 </body>
 </html>
