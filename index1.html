@@ -33,74 +33,6 @@
 
   <style>
     .hr {width: 100%; height: 1px; margin: 48px 0; background-color: #d6dbdf;}
-    
-    /* 添加链接居中样式 */
-    .publication-links {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 1rem;
-      margin: 0 auto;
-    }
-
-    .link-block {
-      display: inline-flex;
-    }
-    
-    /* 添加twentytwenty样式 */
-    .twentytwenty-container {
-      overflow: hidden;
-      position: relative;
-    }
-
-    .twentytwenty-container .video {
-      position: absolute;
-      top: 0;
-      width: 100%;
-    }
-
-    .twentytwenty-container .video:first-child {
-      position: relative;
-      z-index: 1;
-    }
-
-    .twentytwenty-handle {
-      z-index: 40;
-      position: absolute;
-      left: 50%;
-      top: 0;
-      height: 100%;
-      width: 4px;
-      margin-left: -2px;
-      background: white;
-      cursor: ew-resize;
-    }
-
-    .twentytwenty-overlay {
-      position: absolute;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 30;
-    }
-
-    .twentytwenty-before-label, .twentytwenty-after-label {
-      position: absolute;
-      top: 10px;
-      color: white;
-      background: rgba(0,0,0,0.5);
-      padding: 3px 10px;
-      border-radius: 4px;
-      z-index: 30;
-    }
-
-    .twentytwenty-before-label {
-      left: 10px;
-    }
-
-    .twentytwenty-after-label {
-      right: 10px;
-    }
   </style>
 
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
@@ -449,38 +381,25 @@
   </div>
 </section>
 
-<!-- 替换原有的 jQuery 初始化代码 -->
 <script>
-  $(document).ready(function() {
-    // 等待页面完全加载后初始化twentytwenty
-    setTimeout(function() {
-      $(".twentytwenty-container").twentytwenty({
-        default_offset_pct: 0.5,
-        before_label: "条件视频",
-        after_label: "生成结果"
+  // 点击缩略图切换逻辑
+  document.querySelectorAll('.slide-menu .dot').forEach(dot => {
+    dot.addEventListener('click', () => {
+      // 移除所有 dot 的激活态
+      document.querySelectorAll('.slide-menu .dot').forEach(d => d.classList.remove('is-active'));
+      dot.classList.add('is-active');
+
+      const slideIndex = dot.getAttribute('data-slide');
+      // 隐藏所有 slide
+      document.querySelectorAll('.slide-content').forEach(slide => {
+        slide.classList.remove('is-active');
       });
-    }, 500);
-    
-    // 处理标签切换事件
-    $('.dot').on('click', function() {
-      const slideIndex = $(this).data('slide');
-      
-      // 激活当前标签页
-      $('.dot').removeClass('is-active');
-      $(this).addClass('is-active');
-      
-      // 显示对应内容
-      $('.slide-content').removeClass('is-active');
-      $(`.slide-content[data-slide="${slideIndex}"]`).addClass('is-active');
-      
-      // 重新初始化当前显示的twentytwenty容器
-      setTimeout(function() {
-        $(`.slide-content[data-slide="${slideIndex}"] .twentytwenty-container`).twentytwenty({
-          default_offset_pct: 0.5,
-          before_label: "条件视频",
-          after_label: "生成结果"
-        });
-      }, 300);
+      // 只显示点击对应的那个 slide
+      document.querySelector(`.slide-content[data-slide="${slideIndex}"]`).classList.add('is-active');
+      // 触发一次重绘：让 TwentyTwenty 能够拿到正确的宽高重新绘制
+      $(window).trigger('resize');
+      // 或者给可见 slide 内部的 .twentytwenty-container 再初始化一次
+      $(activeSlide).find('.twentytwenty-container').twentytwenty();
     });
   });
 </script>
@@ -540,11 +459,20 @@
   <script src="./assets/js/index.js"></script>
   <script src="./assets/js/jquery.event.move.js"></script>
   <script src="./assets/js/jquery.twentytwenty.js"></script>
+  <script>
+
+  // 初始化twentytwenty比较功能
+  $(function(){
+    $(".twentytwenty-container").twentytwenty();
+    // $(".twentytwenty-container", "#results-carousel").twentytwenty({default_offset_pct: 0.5, ratio: 0.5});
+  });
+  </script>
 
   <!-- 引入 Bulma CSS (如有需要) -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 
   <style>
+
     /* 默认隐藏每个 slide */
     .slide-content {
       display: none;
@@ -562,7 +490,7 @@
       cursor: pointer;
     }
 
-    /* 缩略图样式 */
+    /* 缩略图样式 (可按需保留/修改) */
     .card-img {
       border: 2px solid #c1bfbf;
       border-radius: 8px;
@@ -589,6 +517,7 @@
       border-radius: 4px;
     }
   </style>
+
 
 </body>
 </html>
