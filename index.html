@@ -45,87 +45,6 @@
 </head>
 <body>
 
-<!-- custom js file  -->
-<!-- <script defer src="./assets/js/fontawesome.all.min.js"></script> -->
-<script src="./assets/js/bulma-carousel.min.js"></script>
-<script src="./assets/js/bulma-slider.min.js"></script>
-<script src="./assets/js/index.js"></script>
-<script src="./assets/js/jquery.event.move.js"></script>
-<script src="./assets/js/jquery.twentytwenty.js"></script>
-<script>
-  bulmaCarousel.attach('#results-carousel', {
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    infinite: true,
-    autoplay: true,
-    navigation: true
-  });
-
-  $(function(){
-    $(".twentytwenty-container").twentytwenty();
-  });
-</script>
-
-<!-- 引入 Bulma CSS (如有需要) -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-
-<style>
-  /* 上下两个内容布局：1列2行 */
-  .columns.is-2x1 {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-    gap: 1rem;
-  }
-
-
-  /* 只显示被点选的 slide */
-  .slide-content.is-active {
-    display: block;
-  }
-
-  /* 去掉小圆点默认背景 */
-  .dots .dot {
-    background: none;
-    border: none;
-    cursor: pointer;
-  }
-
-  /* 缩略图样式 */
-  .card-img {
-    border: 2px solid #c1bfbf;
-    border-radius: 8px;
-    padding: 2px;
-    display: inline-block;
-    transition: transform 0.3s ease-in-out;
-    transform-origin: center center;
-  }
-  
-  .card-img:active {
-    transform: scale(1.2);
-  }
-
-  /* 五张图片的布局 */
-  .columns.is-four-images {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 1rem;
-    margin-top: 1.5rem;
-  }
-  
-  .columns.is-four-images figure {
-    flex: 0 0 18%;
-  }
-  
-  .columns.is-four-images img {
-    width: 100%;
-    height: auto;
-    border: 2px solid #ccc;
-    border-radius: 4px;
-  }
-</style>
-
 <section class="hero">
   <div class="hero-body">
     <div class="container is-max-desktop head">
@@ -472,24 +391,13 @@
       document.querySelectorAll('.slide-content').forEach(slide => {
         slide.classList.remove('is-active');
       });
-      // 显示对应的 slide
-      const activeSlide = document.querySelector(`.slide-content[data-slide="${slideIndex}"]`);
-      activeSlide.classList.add('is-active');
-      
-      // 延时 300ms 后初始化 twentytwenty（确保新 slide 完全显示）
-      setTimeout(() => {
-        $(activeSlide).find('.twentytwenty-container').each(function() {
-          $(this).twentytwenty();
-        });
-        // 如有必要，触发一次窗口 resize
-        $(window).trigger('resize');
-      }, 300);
+      // 只显示点击对应的那个 slide
+      document.querySelector(`.slide-content[data-slide="${slideIndex}"]`).classList.add('is-active');
+      // 触发一次重绘：让 TwentyTwenty 能够拿到正确的宽高重新绘制
+      $(window).trigger('resize');
+      // 或者给可见 slide 内部的 .twentytwenty-container 再初始化一次
+      $(activeSlide).find('.twentytwenty-container').twentytwenty();
     });
-  });
-
-  // 页面加载时初始化第一个 slide 的 twentytwenty
-  $(document).ready(function() {
-    $('.slide-content.is-active .twentytwenty-container').twentytwenty();
   });
 </script>
 
@@ -541,6 +449,82 @@
   </div>
 </footer>
 
+  <!-- custom js file  -->
+  <!-- <script defer src="./assets/js/fontawesome.all.min.js"></script> -->
+  <script src="./assets/js/bulma-carousel.min.js"></script>
+  <script src="./assets/js/bulma-slider.min.js"></script>
+  <script src="./assets/js/index.js"></script>
+  <script src="./assets/js/jquery.event.move.js"></script>
+  <script src="./assets/js/jquery.twentytwenty.js"></script>
+  <script> 
+    $(function(){
+      $(".twentytwenty-container").twentytwenty();
+    });
+  </script>
+
+  <!-- 引入 Bulma CSS (如有需要) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+  <style>
+    /* 上下两个内容布局：1列2行 */
+    .columns.is-2x1 {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+      gap: 1rem;
+    }
+
+    /* 默认隐藏每个 slide */
+    .slide-content {
+      display: none;
+    }
+
+    /* 只显示被点选的 slide */
+    .slide-content.is-active {
+      display: block;
+    }
+
+    /* 去掉小圆点默认背景 */
+    .dots .dot {
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    /* 缩略图样式 */
+    .card-img {
+      border: 2px solid #c1bfbf;
+      border-radius: 8px;
+      padding: 2px;
+      display: inline-block;
+      transition: transform 0.3s ease-in-out;
+      transform-origin: center center;
+    }
+    
+    .card-img:active {
+      transform: scale(1.2);
+    }
+
+    /* 五张图片的布局 */
+    .columns.is-four-images {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    
+    .columns.is-four-images figure {
+      flex: 0 0 18%;
+    }
+    
+    .columns.is-four-images img {
+      width: 100%;
+      height: auto;
+      border: 2px solid #ccc;
+      border-radius: 4px;
+    }
+  </style>
 
 
 </body>
