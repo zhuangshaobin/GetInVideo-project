@@ -1,4 +1,3 @@
-new
 <!DOCTYPE html>
 <html>
 <head>
@@ -119,7 +118,7 @@ new
           
 
           <div class="column has-text-centered">
-            <div class="publication-links">
+            <div class="publication-links" style="display: flex; justify-content: center; gap: 10px;">
               <!-- PDF Link. -->
               <!-- <span class="link-block">
                 <a href="./xx.pdf" target="_blank"
@@ -152,7 +151,7 @@ new
                   </a>
               </span>
 
-              <!-- Video Link. -->
+              <!-- Video Link.
               <span class="link-block">
                 <a href="https://www.youtube.com/embed/ezRM2xF3fDw" target="_blank"
                    class="external-link button is-normal is-rounded is-dark">
@@ -161,7 +160,7 @@ new
                   </span>
                   <span>Video</span>
                 </a>
-              </span>
+              </span> -->
             </div>
 
           </div>
@@ -280,12 +279,8 @@ new
           <img class="card-img" src="./assets/videos/girl/reference_images/reference_image1.png" alt="Slide 4" style="width:120px; height:auto;">
         </li>
         <li class="dot" data-slide="4">
-            <div class="reference-images-container">
-                <img class="card-img-small" src="./assets/videos/three_people/reference_images/reference_image1.png" alt="Slide 5">
-                <img class="card-img-small" src="./assets/videos/three_people/reference_images/reference_image2.png" alt="Slide 5">
-                <img class="card-img-small" src="./assets/videos/three_people/reference_images/reference_image3.png" alt="Slide 5">
-            </div>
-        </li>
+            <img class="card-img" src="./assets/videos/three_people/reference_images/reference_image1.png" alt="Slide 5" style="width:120px; height:auto;">
+          </li>
       </ul>
     </div>
 
@@ -423,12 +418,19 @@ new
         slide.classList.remove('is-active');
       });
       // 只显示点击对应的那个 slide
-      document.querySelector(`.slide-content[data-slide="${slideIndex}"]`).classList.add('is-active');
-      // 触发一次重绘：让 TwentyTwenty 能够拿到正确的宽高重新绘制
-      $(window).trigger('resize');
-      // 或者给可见 slide 内部的 .twentytwenty-container 再初始化一次
-      $(activeSlide).find('.twentytwenty-container').twentytwenty();
+      const activeSlide = document.querySelector(`.slide-content[data-slide="${slideIndex}"]`);
+      activeSlide.classList.add('is-active');
+      
+      // 重要：等待DOM更新后再初始化twentytwenty
+      setTimeout(() => {
+        $(activeSlide).find('.twentytwenty-container').twentytwenty();
+      }, 50);
     });
+  });
+
+  // 页面加载时初始化第一个slide的twentytwenty
+  $(document).ready(function() {
+    $('.slide-content.is-active .twentytwenty-container').twentytwenty();
   });
 </script>
 
@@ -529,7 +531,7 @@ new
     .columns.is-2x1 {
       display: grid;
       grid-template-columns: 1fr;     /* 1 列 */
-      grid-template-rows: auto auto; /* 2 行 */
+      grid-template-rows: auto; /* 2 行 */
       gap: 1rem;
     }
 
@@ -558,7 +560,6 @@ new
       display: inline-block;
       transition: transform 0.3s ease-in-out;
       transform-origin: center center;
-      max-height: 100px; /* 限制最大高度 */
     }
     
     .card-img:active {
@@ -585,20 +586,6 @@ new
       border-radius: 4px;
     }
 
-    /* 多图参考容器 */
-    .reference-images-container {
-        display: flex;
-        gap: 4px;
-        width: 120px;
-    }
-    
-    .reference-images-container .card-img-small {
-        width: calc(100% / 3);
-        height: auto;
-        border: 2px solid #c1bfbf;
-        border-radius: 8px;
-        padding: 1px;
-    }
   </style>
 
 </body>
